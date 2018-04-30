@@ -1,3 +1,6 @@
+// Funcion mover?
+
+
 #include <iostream>
 #include "Moverse.h"
 #include "Posicion.h"

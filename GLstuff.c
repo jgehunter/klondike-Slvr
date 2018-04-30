@@ -1,9 +1,13 @@
- 
+//Contiene los parametros de la interfaz grafica
+
+
+
+
 
 #include "GLstuff.h"
 
-
-
+extern double xp;
+extern double yp;
 
 void OnKeyboardDown(unsigned char key, int x, int y)
 {
@@ -11,8 +15,14 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     {
     case 'q':
     case ESC:     exit(1);  
-    case 'a': /* do something */ ; break;
+    
    
+            
+        case 'w': yp=yp+0.4;break;
+        case 's': yp=yp-0.4;break;
+        case 'd': xp=xp+0.4;break;
+        case 'a': xp=xp-0.4; break;
+            
     }		
 }
 
@@ -27,7 +37,7 @@ void init_GL_stuff()
     
   glutInitWindowSize(ANCHO,ALTO);
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-  glutCreateWindow("Ejemplo GLUT");
+  glutCreateWindow("Klondike");
 
   //Habilitar las luces, la renderizacion y el color de los materiales
   glEnable(GL_LIGHT0);

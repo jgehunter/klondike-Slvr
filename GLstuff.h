@@ -1,4 +1,4 @@
- 
+//cabeceras de funciones para interfaz grafica
  
 
 #include "GLUT/glut.h"

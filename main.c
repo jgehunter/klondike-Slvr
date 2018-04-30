@@ -1,11 +1,10 @@
- 
+//programa principal (contiene el bucle infinito que dibuja)
 
 
 #include "GLUT/glut.h"
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-
 #include "GLstuff.h"
 
 
@@ -30,6 +29,12 @@ void drawSnowMan(float x, float y, float z);
 // Variables globales
 
 
+double xp=0;
+double yp=0;
+double zp=0;
+
+
+
 // Texture datas tructure
 GLuint KLtexture;
 
@@ -39,15 +44,13 @@ float snowman_rot = 0;
 
 
 
-
+//Main  -> inicializaciones + bucle infinito
 int main(int argc,char* argv[])
 {
-	
 
-
- 
-  // Inicializaciones
-
+    
+/**************************************************************/
+  // Inicializaciones OPEN GL
 
   // Inicialización GLUT
   glutInit(&argc, argv);
@@ -55,7 +58,6 @@ int main(int argc,char* argv[])
   // Inicializaciones openGL (ver GLstuff.c)
   init_GL_stuff();
   
-
   // Definición call backs de GLUT
   glutDisplayFunc(OnDibuja);
 	
@@ -68,28 +70,42 @@ int main(int argc,char* argv[])
 	    0.0, 0, 0.0,	// hacia que punto mira  
 	    0.0, 1.0, 0.0);     // vector "UP"  (vertical positivo)
 
-
   // Carga la textura
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
   KLtexture= LoadTexture(900,1074, "klondike.bmp" );
   glBindTexture (GL_TEXTURE_2D, KLtexture);
-
- 
   
   // bucle del programa
   glutMainLoop();
   
   return 0;   
 
-  /**************************************************************/}
+/**************************************************************/}
  
 
 
-void myLogic()
+
+
+
+
+void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
+
+// CREO QUE AQUI IRA EL PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO
 {
 
-  snowman_rot += 2.0;
+    //ejemplo trasladar mu–eco
+  
+    //xp=xp+0.01;      PRUEBA A USAR teclas w a s d
+   // yp=yp+0.01;
 
+    if(xp>5) xp = 0;
+    if(yp>5) yp = 0;
+    
+    
+    
+    
+    
+    snowman_rot += 2.0;
   if(snowman_rot>360) snowman_rot = 0;
   
 }
@@ -110,7 +126,7 @@ void OnDibuja(void)
 
 
   displaytext(KLtexture);
-  drawSnowMan(0.03,-0.15,0.2);
+  drawSnowMan(xp,yp,zp);
   
   
   glLoadIdentity();
@@ -148,7 +164,7 @@ void drawSnowMan(float x, float y, float z)
 
   glPushMatrix();
   
-  glTranslatef(x,y,z);
+  glTranslatef(x,y,z);  //TENEMOS x y z
   glRotatef(90,1,0,0);
   glRotatef(snowman_rot,0,1,0);
   glRotatef(0,0,0,1);
