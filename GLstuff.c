@@ -51,7 +51,8 @@ void init_GL_stuff()
 
   
   // color del fondo
-  glClearColor(0.5f, 0.91f, 0.9f, 0.5f);    
+  glClearColor(102.0/255.0, 194.0/255.0, 255.0/255.0, 0.5f); // RGB
+
 	
   // Define el punto de vista
   glMatrixMode(GL_MODELVIEW);	
