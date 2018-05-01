@@ -115,6 +115,13 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     
     
 // PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
+    
+    
+    
+    
+    
+    
+    
     //ejemplo trasladar mu–eco
   
     //xp=xp+0.01;      PRUEBA A USAR teclas         w
