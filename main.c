@@ -10,7 +10,7 @@
 
 
 
-// Prototipos de funciones 
+// PROTOTIPOS
 
 //Callbacks de logica del programa
 void myLogic();
@@ -20,7 +20,7 @@ void OnDibuja(void);
 
 //Callback de gestión del teclado
 void OnKeyboardDown(unsigned char key, int x, int y);
-
+void OnSpecKeyboardDown(unsigned char key, int x, int y);
 
 // Ejemplo de objeto 3D
 void drawSnowMan(float x, float y, float z);
@@ -33,6 +33,7 @@ double xp=0;
 double yp=0;
 double zp=0;
 
+float cam_pos[3]={0,-10,10};
 
 
 // Texture datas tructure
@@ -83,9 +84,11 @@ int main(int argc,char* argv[])
   glutIdleFunc(myLogic);
 
   glutKeyboardFunc(OnKeyboardDown);
+  glutSpecialFunc(OnSpecKeyboardDown);
  
-  // posicciona el punto de vista 
-  gluLookAt(0,-10,10,           // posicion del  ojo  
+    
+    // posicciona el punto de vista
+  gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],       // posicion del  ojo
 	    0.0, 0, 0.0,	// hacia que punto mira  
 	    0.0, 1.0, 0.0);     // vector "UP"  (vertical positivo)
 
@@ -170,7 +173,7 @@ void OnDibuja(void)
     glLoadIdentity();
 /**************************************************************/
   // posicciona el punto de vista 
-  gluLookAt(0,-10,10,  // posicion del  ojo  
+  gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],  // posicion del  ojo
 	    0.0, 0, 0.0,		        // hacia que punto mira  
 	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
   
@@ -182,10 +185,11 @@ void OnDibuja(void)
 
 
 
-
-
 //OBJETOS A DIBUJAR
  
+
+
+
 
 
 void drawSnowMan(float x, float y, float z)

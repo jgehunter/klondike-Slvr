@@ -8,6 +8,9 @@
 
 extern double xp;
 extern double yp;
+extern float cam_pos[];
+
+
 
 void OnKeyboardDown(unsigned char key, int x, int y)
 {
@@ -18,14 +21,40 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     
    
             
-        case 'w': yp=yp+0.4;break;
-        case 's': yp=yp-0.4;break;
-        case 'd': xp=xp+0.4;break;
-        case 'a': xp=xp-0.4; break;
-            
+    case 'w': yp=yp+0.4;break;
+    case 's': yp=yp-0.4;break;
+    case 'd': xp=xp+0.4;break;
+    case 'a': xp=xp-0.4; break;
+    
+        
     }		
 }
 
+
+    
+void OnSpecKeyboardDown(int key, int x, int y)
+{
+    switch(key)
+    {
+            
+        case GLUT_KEY_DOWN: cam_pos[1]+=1;
+            break;
+        case GLUT_KEY_UP: cam_pos[1]-=1;
+            break;
+        case GLUT_KEY_LEFT: cam_pos[0]+=1;
+            break;
+        case GLUT_KEY_RIGHT: cam_pos[0]-=1;
+            break;
+        case GLUT_KEY_PAGE_DOWN: cam_pos[2]+=1;
+            break;
+        case GLUT_KEY_PAGE_UP: cam_pos[2]-=1;
+            break;
+
+            
+            
+    }
+
+}
 
 
 
