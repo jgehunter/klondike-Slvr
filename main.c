@@ -20,7 +20,7 @@ void OnDibuja(void);
 
 //Callback de gestión del teclado
 void OnKeyboardDown(unsigned char key, int x, int y);
-void OnSpecKeyboardDown(unsigned char key, int x, int y);
+void OnSpecKeyboardDown(int key, int x, int y);
 
 // Ejemplo de objeto 3D
 void drawSnowMan(float x, float y, float z);
