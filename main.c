@@ -45,12 +45,12 @@ float snowman_rot = 0;
 
 
 
-//Main  -> inicializaciones + bucle infinito
+//Main contiene las inicializaciones + bucle infinito
 int main(int argc,char* argv[])
 {
 
 /**************************************************************/
-    //INICIACION PROGRAMA HUNTER
+    //INICILIZACION PROGRAMA HUNTER
     
     
     
