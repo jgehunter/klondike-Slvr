@@ -49,6 +49,25 @@ int main(int argc,char* argv[])
 {
 
     
+    //INICIACION PROGRAMA HUNTER
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 /**************************************************************/
   // Inicializaciones OPEN GL
 
@@ -89,17 +108,36 @@ int main(int argc,char* argv[])
 
 
 void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
-
-// CREO QUE AQUI IRA EL PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO
 {
 
+    
+    
+// PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
     //ejemplo trasladar mu–eco
   
-    //xp=xp+0.01;      PRUEBA A USAR teclas w a s d
-   // yp=yp+0.01;
+    //xp=xp+0.01;      PRUEBA A USAR teclas         w
+    // yp=yp+0.01;                                a s d
 
+    
+    //Ejemplos de acciones
+    
     if(xp>5) xp = 0;
-    if(yp>5) yp = 0;
+   // if(yp>5) yp = 0;
+    
+    if(yp>5) exit(1);
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
