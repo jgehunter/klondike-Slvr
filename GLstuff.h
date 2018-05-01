@@ -1,7 +1,16 @@
 //cabeceras de funciones para interfaz grafica
  
 
+
+
+#ifdef _WIN32
+#include "glut.h"  //PARA QUE FUNCIONE EN WINDOWS ES NECESARIO ESTE
+#elif defined(__APPLE__)
 #include "GLUT/glut.h"
+#endif
+
+
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
