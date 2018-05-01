@@ -24,6 +24,7 @@
 GLuint LoadTexture(int, int, const char * filename );
 
 void displaytext(GLuint Thetexture);
+//void background (GLuint texture);
 
 void init_GL_stuff();
  
