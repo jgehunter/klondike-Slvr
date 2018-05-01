@@ -149,32 +149,30 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
 }
 
 /**************************************************************/
-/**************************************************************/
-/**************************************************************/
-/**************************************************************/
 
 void OnDibuja(void)
-{ 
-  int i;
-
-  //Borrado de la pantalla	
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  
-  // proyeccion de las figuras
+{
+    //Borrado de la pantalla
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+/**************************************************************/
+    
+    // proyeccion de las figuras     DIBUJAR
 
 
   displaytext(KLtexture);
   drawSnowMan(xp,yp,zp);
   
   
-  glLoadIdentity();
-
+    
+    
+    
+    
+    glLoadIdentity();
+/**************************************************************/
   // posicciona el punto de vista 
   gluLookAt(0,-10,10,  // posicion del  ojo  
 	    0.0, 0, 0.0,		        // hacia que punto mira  
 	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
-  
-  
   
   //Al final, cambiar el buffer
   glutSwapBuffers();
@@ -182,7 +180,11 @@ void OnDibuja(void)
   /**************************************************************/
 }
 
- 
+
+
+
+
+//OBJETOS A DIBUJAR
  
 
 
