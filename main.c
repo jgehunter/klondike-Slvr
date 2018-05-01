@@ -49,7 +49,7 @@ float snowman_rot = 0;
 int main(int argc,char* argv[])
 {
 
-    
+/**************************************************************/
     //INICIACION PROGRAMA HUNTER
     
     
@@ -101,8 +101,7 @@ int main(int argc,char* argv[])
   glutMainLoop();
   
   return 0;   
-
-/**************************************************************/}
+}
  
 
 
@@ -112,7 +111,7 @@ int main(int argc,char* argv[])
 
 void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
 {
-
+/**************************************************************/
     
     
 // PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
@@ -180,12 +179,12 @@ void OnDibuja(void)
   //Al final, cambiar el buffer
   glutSwapBuffers();
   glutPostRedisplay();//se le indica que redibuje la pantalla
-  /**************************************************************/
+ 
 }
 
 
 
-//OBJETOS A DIBUJAR
+//OBJETOS PARA DIBUJAR
  
 
 
