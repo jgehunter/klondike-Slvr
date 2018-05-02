@@ -6,7 +6,7 @@
 #ifdef __WIN32
 #include "glut.h"  //PARA QUE FUNCIONE EN WINDOWS ES NECESARIO ESTE
 #elif defined __APPLE__
-#include "GLUT/glut.h"
+#include <GLUT/glut.h>
 #endif
 
 
