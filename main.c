@@ -97,6 +97,10 @@ int main(int argc,char* argv[])
   KLtexture= LoadTexture(900,1074, "klondike.bmp" );
   glBindTexture (GL_TEXTURE_2D, KLtexture);
   
+   // Bgtexture=LoadTexture(900,1074, "klondike.bmp" );
+    //glBindTexture (GL_TEXTURE_2D, Bgtexture);
+    
+    
   // bucle del programa
   glutMainLoop();
   
@@ -169,6 +173,8 @@ void OnDibuja(void)
 
 
   displaytext(KLtexture);
+  //Background(Bgtexture);
+    
   drawSnowMan(xp,yp,zp);
   
   
