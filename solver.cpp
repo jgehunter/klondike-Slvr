@@ -18,10 +18,16 @@ int main()
     }
 
     Nodo* nodoActual;
+    Nodo* nodoPlaceholder;
+    Nodo* nodoInicio;
     nodoActual = new Nodo;
+    nodoPlaceholder = new Nodo;
+    nodoInicio = new Nodo;
 
     nodoActual->Setcoordenadas(std::make_pair(0,0));
-    nodoActual->Setparent(nullptr);
+    nodoActual->Setparent(nodoPlaceholder);
+    nodoPlaceholder->Setparent(nullptr);
+    nodoInicio = nodoActual;
 
     std::list<Nodo*> OPEN;
     std::list<Nodo> CLOSED;
@@ -29,22 +35,43 @@ int main()
     OPEN.push_back(nodoActual);
     CLOSED.push_back(*nodoActual);
 
+    int contador = 0;
     for(;;){
         nodoActual = OPEN.front();
         OPEN.pop_front();
         nodoActual->Crearhijos( CLOSED, OPEN, nodoActual, tablero );
         for( auto iter : nodoActual->Gethijos()){
-            OPEN.push_front(iter);
+            OPEN.push_back(iter);
+            contador++;
             CLOSED.push_back(*iter);
         }
-        if( OPEN.empty() || (nodoActual->Comprobarmovimiento( tablero ) == 0)) break;
-        /*std::cout << "xy antes de quitar: " << OPEN.front()->Getcoordenadas().first << " " << OPEN.front()->Getcoordenadas().second << std::endl;
-        std::cout << "xy despues de quitar: " << OPEN.front()->Getcoordenadas().first << " " << OPEN.front()->Getcoordenadas().second << std::endl;*/
+        if( OPEN.empty() || nodoActual->Comprobarmovimiento( tablero ) == 0 ) break;
         std::cout << "x y actuales: " << nodoActual->Getcoordenadas().first << " " << nodoActual->Getcoordenadas().second << std::endl;
 }
 
     std::cout << "La posicion final es: " << nodoActual->Getcoordenadas().first << " " << nodoActual->Getcoordenadas().second << std::endl;
-    
 
-    // AQUI FALTA POR IR ITERANDO Y BORRANDO TODOS LOS NODOS CREADOS, A LA VEZ PODEMOS IR GUARDANDO EL CAMINO EN UN VECTOR O ALGO ASI PARA TENER GUARDADO EL CAMINO A LA SOLUCION//
+    Nodo *nodoVisitado1 = nodoActual;
+    std::vector<Nodo> recorrido;
+
+    while(nodoVisitado1->Getparent() != nullptr) {
+        recorrido.push_back(*nodoVisitado1);
+        nodoVisitado1 = nodoVisitado1->Getparent();
+    }
+
+    int flagLeaf = 0;
+    do {
+        if(nodoInicio->Gethijos().size() == 0) flagLeaf = 1;
+        if(!flagLeaf) nodoInicio = nodoInicio->Gethijos().back();
+        if(flagLeaf){
+            Nodo* nodoTemp;
+            nodoTemp = nodoInicio->Getparent();
+            delete nodoInicio;
+            nodoInicio = nodoTemp;
+            nodoInicio->Gethijos().pop_back();
+            if(nodoInicio->Getparent() == nullptr) break;
+        }
+        flagLeaf = 0;
+    } while(1) ;
+    delete nodoInicio;
 }
