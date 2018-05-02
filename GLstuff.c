@@ -162,22 +162,23 @@ glBindTexture(GL_TEXTURE_2D, Thetexture);
 }
 
 
-// INTENTO DE PONER IMAGEN DE FONDO
+ //INTENTO DE PONER IMAGEN DE FONDO
 
-//void background (GLuint texture) {
+/*void background (GLuint texture) {
     
-//    glBindTexture( GL_TEXTURE_2D, texture );
+   glBindTexture( GL_TEXTURE_2D, texture );
     
     
- //   glBegin(GL_QUADS);
- //       glTexCoord2f(0.0, 0.0); glVertex3f(-70.0, -5.0, 0.0);
-  //      glTexCoord2f(0.0, 1.0); glVertex3f(-5.0, 5.0, 0.0);
- //       glTexCoord2f(1.0, 1.0); glVertex3f(5.0, 5.0, 0.0);
- //       glTexCoord2f(1.0, 0.0); glVertex3f(5.0, -5.0, 0.0);
+   glBegin(GL_QUADS);
+      glTexCoord2f(0.0, 0.0); glVertex3f(-70.0, -5.0, 0.0);
+     glTexCoord2f(0.0, 1.0); glVertex3f(-5.0, 5.0, 0.0);
+     glTexCoord2f(1.0, 1.0); glVertex3f(5.0, 5.0, 0.0);
+   glTexCoord2f(1.0, 0.0); glVertex3f(5.0, -5.0, 0.0);
         
-  //      glEnd();
-    
-//}
+   glEnd();
+    glFlush();
+    glDisable(GL_TEXTURE_2D);
+} */
 
  
 

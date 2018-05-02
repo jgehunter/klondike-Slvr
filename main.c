@@ -38,7 +38,7 @@ float cam_pos[3]={0,-10,10};
 
 // Texture datas tructure
 GLuint KLtexture;
-
+GLuint Bgtexture;
 
 
 float snowman_rot = 0;
@@ -97,8 +97,8 @@ int main(int argc,char* argv[])
   KLtexture= LoadTexture(900,1074, "klondike.bmp" );
   glBindTexture (GL_TEXTURE_2D, KLtexture);
   
-   // Bgtexture=LoadTexture(900,1074, "klondike.bmp" );
-    //glBindTexture (GL_TEXTURE_2D, Bgtexture);
+  /*Bgtexture=LoadTexture(900,1074, "klondike.bmp" );
+  glBindTexture (GL_TEXTURE_2D, Bgtexture);*/
     
     
   // bucle del programa
@@ -172,8 +172,8 @@ void OnDibuja(void)
     // proyeccion de las figuras     DIBUJAR
 
 
-  displaytext(KLtexture);
-  //Background(Bgtexture);
+ displaytext(KLtexture);
+  //background(Bgtexture);
     
   drawSnowMan(xp,yp,zp);
   
