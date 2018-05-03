@@ -1,18 +1,19 @@
 
-#ifndef Figura
-#define Figura
+#ifndef FIGURA_H
+#define FIGURA_H
 
 #include "Personaje.h"
 
 
 class Figura{
  private:
-pos= float[3];
-rot= float[2];
+
+float pos[3];
+float rot[2];
 
 
  public:
-  Figura();
+
   
     
     void getNombre(char *n);
