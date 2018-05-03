@@ -1,6 +1,5 @@
 
 #include "Personaje.h"
-#include "Figura.h"
 #include <string.h>
 #include "GLstuff.h"
 
