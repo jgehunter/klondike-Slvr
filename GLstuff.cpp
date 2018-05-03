@@ -97,7 +97,7 @@ GLuint LoadTexture( int width, int height, const char * filename )
  
   unsigned char * data;
 
-  FILE * file; /* trabajamos con los ficheros en modo C o en modo C++? en C++ seria con lo de fstream y tal */
+  FILE * file; /* como debemos trabajar, con los ficheros en modo C o en modo C++? en C++ seria con lo de fstream y tal */
     
  file = fopen( filename, "rb" );
 
