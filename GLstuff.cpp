@@ -36,17 +36,17 @@ void OnSpecKeyboardDown(int key, int x, int y)
     switch(key)
     {
             
-        case GLUT_KEY_DOWN: cam_pos[1]+=1;
+        case GLUT_KEY_DOWN: cam_pos[2]+=1;
             break;
-        case GLUT_KEY_UP: cam_pos[1]-=1;
+        case GLUT_KEY_UP: cam_pos[2]-=1;
             break;
-        case GLUT_KEY_LEFT: cam_pos[0]+=1;
+        case GLUT_KEY_LEFT: cam_pos[1]+=1;
             break;
-        case GLUT_KEY_RIGHT: cam_pos[0]-=1;
+        case GLUT_KEY_RIGHT: cam_pos[1]-=1;
             break;
-        case GLUT_KEY_PAGE_DOWN: cam_pos[2]+=1;
+        case GLUT_KEY_PAGE_DOWN: cam_pos[0]+=1;
             break;
-        case GLUT_KEY_PAGE_UP: cam_pos[2]-=1;
+        case GLUT_KEY_PAGE_UP: cam_pos[0]-=1;
             break;
 
             
@@ -98,21 +98,18 @@ GLuint LoadTexture( int width, int height, const char * filename )
   unsigned char * data;
 
   FILE * file;
- file = fopen(Documents\Progra\klondike-Slvr\"klondike.bmp", "rb" );
+ file = fopen("/Users/inakiechevarria/Documents/Progra/klondike-Slvr/klondike.bmp", "rb" );
    
- 
-    if (file == NULL) {
+ // file = fopen( filename, "rb" );
+
+ if (file == NULL) {
         perror("klondike.bmp");
         printf("Error %d \n", errno);
         return 0;}
-        
-        
-        
-   //  file = fopen( filename, "rb" );
-        
-  if ( file == NULL ) return 0;
-    std::cout<<"FUNCIONA ";
-
+   
+    
+    if ( file == NULL ) return 0;
+   
     data = (unsigned char *)malloc( width * height * 3 );
   //int size = fseek(file,);
   fread( data, width * height * 3, 1, file );
