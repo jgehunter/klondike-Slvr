@@ -1,7 +1,8 @@
 //programa principal (contiene el bucle infinito que dibuja)
 
 
-#include "GLUT/glut.h"
+//#include "GLUT/glut.h"
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -172,14 +173,15 @@ void OnDibuja(void)
     // proyeccion de las figuras     DIBUJAR
 
 
- displaytext(KLtexture);
+    displaytext(KLtexture);
   //background(Bgtexture);
     
   drawSnowMan(xp,yp,zp);
   
   
     
-    
+    cout<<"ahora";
+   
     
     
     glLoadIdentity();
