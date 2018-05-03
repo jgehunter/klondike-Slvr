@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <stdio.h>
-
+#include <errno.h>
 #include "GLstuff.h"
 
 extern double xp;
@@ -98,10 +98,18 @@ GLuint LoadTexture( int width, int height, const char * filename )
   unsigned char * data;
 
   FILE * file;
- file = std::fopen( "klondike.bmp", "rb" );
+ file = fopen(Documents\Progra\klondike-Slvr\"klondike.bmp", "rb" );
    
-  //  file = fopen( filename, "rb" );
-
+ 
+    if (file == NULL) {
+        perror("klondike.bmp");
+        printf("Error %d \n", errno);
+        return 0;}
+        
+        
+        
+   //  file = fopen( filename, "rb" );
+        
   if ( file == NULL ) return 0;
     std::cout<<"FUNCIONA ";
 
