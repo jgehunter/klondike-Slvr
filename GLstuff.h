@@ -3,13 +3,13 @@
 
 
 
-#ifdef __WIN32
+/*#ifdef __WIN32
 #include "glut.h"  //PARA QUE FUNCIONE EN WINDOWS ES NECESARIO ESTE
-#endif
+#endif*/
 
-#ifdef __APPLE__
+//#ifdef __APPLE__
 #include <GLUT/glut.h>
-#endif
+
 
 
 #include <stdio.h>
