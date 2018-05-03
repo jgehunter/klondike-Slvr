@@ -1,8 +1,7 @@
 //Contiene los parametros de la interfaz grafica
 
-
-
-
+#include <iostream>
+#include <stdio.h>
 
 #include "GLstuff.h"
 
@@ -95,16 +94,18 @@ GLuint LoadTexture( int width, int height, const char * filename )
 
   GLuint texture;
 
-
+ 
   unsigned char * data;
 
   FILE * file;
-
-  file = fopen( filename, "rb" );
+ file = std::fopen( "klondike.bmp", "rb" );
+   
+  //  file = fopen( filename, "rb" );
 
   if ( file == NULL ) return 0;
+    std::cout<<"FUNCIONA ";
 
-  data = (unsigned char *)malloc( width * height * 3 );
+    data = (unsigned char *)malloc( width * height * 3 );
   //int size = fseek(file,);
   fread( data, width * height * 3, 1, file );
   fclose( file );

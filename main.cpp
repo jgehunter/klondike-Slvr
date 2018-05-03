@@ -7,6 +7,12 @@
 #include <math.h>
 #include <stdlib.h>
 #include "GLstuff.h"
+#include <utility>
+#include <list>
+#include <map>
+#include <fstream>
+#include <iostream>
+#include "nodo.h"
 
 
 
@@ -97,7 +103,7 @@ int main(int argc,char* argv[])
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
   KLtexture= LoadTexture(900,1074, "klondike.bmp" );
   glBindTexture (GL_TEXTURE_2D, KLtexture);
-  
+ 
   /*Bgtexture=LoadTexture(900,1074, "klondike.bmp" );
   glBindTexture (GL_TEXTURE_2D, Bgtexture);*/
     
@@ -180,7 +186,7 @@ void OnDibuja(void)
   
   
     
-    cout<<"ahora";
+ 
    
     
     
