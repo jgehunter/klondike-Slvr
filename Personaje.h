@@ -1,9 +1,11 @@
-
+#include "Figura.h"
 
 #ifndef Personaje
 #define Personaje
 
-class Personaje{
+
+
+class Personaje: public Figura{
  private:
   
 
