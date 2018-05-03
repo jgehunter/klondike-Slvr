@@ -2,7 +2,7 @@
 #ifndef Figura
 #define Figura
 
-#include "personaje.h"
+#include "Personaje.h"
 
 
 class Figura{
