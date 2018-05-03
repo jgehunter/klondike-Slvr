@@ -5,7 +5,7 @@
 
 
 
-class Personaje : public Figura {
+class Personaje :: public Figura {
  private:
   
 
