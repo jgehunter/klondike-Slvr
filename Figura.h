@@ -15,7 +15,7 @@ float rot[2];
  public:
 
   
-    
+    Figura();
     void getNombre(char *n);
     void setNombre(char *n);
  // void addFigura(Figura*);

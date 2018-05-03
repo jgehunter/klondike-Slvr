@@ -1,13 +1,14 @@
 
 #include "Personaje.h"
+#include "Figura.h"
 #include <string.h>
 #include "GLstuff.h"
 
 void Personaje::draw()
 {
-    float x=Personaje.pos[0];
-    float y=Personaje.pos[1];
-    float z=Personaje.pos[2];
+    float x=pos[0];
+    float y=pos[1];
+    float z=pos[2];
    
     static float s=0;
     
