@@ -13,6 +13,7 @@ class Personaje : public Figura {
   
 
  public:
+    Personaje();
   void draw();
   
   
