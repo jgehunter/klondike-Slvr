@@ -1,7 +1,7 @@
 #include "Figura.h"
 
-#ifndef PERSONJE_H
-#define PERSONJE_H
+#ifndef PERSONAJE_H
+#define PERSONAJE_H
 
 
 
