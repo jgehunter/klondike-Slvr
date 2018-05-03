@@ -98,9 +98,8 @@ GLuint LoadTexture( int width, int height, const char * filename )
   unsigned char * data;
 
   FILE * file;
- file = fopen("/Users/inakiechevarria/Documents/Progra/klondike-Slvr/klondike.bmp", "rb" );
-   
- // file = fopen( filename, "rb" );
+    
+ file = fopen( filename, "rb" );
 
  if (file == NULL) {
         perror("klondike.bmp");

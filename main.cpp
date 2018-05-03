@@ -101,8 +101,17 @@ int main(int argc,char* argv[])
 
   // Carga la textura
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-  KLtexture= LoadTexture(900,1074, "klondike.bmp" );
-  glBindTexture (GL_TEXTURE_2D, KLtexture);
+ 
+    //DEBERIA BASTAR CON LoadTexture(900,1074, "klondike.bmp" ); PERO NO FUNIONA SI NO PONES LA RURA COMPLETA, A„ADID LA VUESTRA PARA PRUEBAS
+    
+    
+    KLtexture= LoadTexture(900,1074, "/Users/inakiechevarria/Documents/Progra/klondike-Slvr/klondike.bmp" );
+  // KLtexture= LoadTexture(900,1074, "/   /klondike.bmp" );
+  // KLtexture= LoadTexture(900,1074,  "/   /klondike.bmp");
+    
+    
+    
+    glBindTexture (GL_TEXTURE_2D, KLtexture);
  
   /*Bgtexture=LoadTexture(900,1074, "klondike.bmp" );
   glBindTexture (GL_TEXTURE_2D, Bgtexture);*/
