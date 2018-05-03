@@ -5,6 +5,10 @@
 
 void Personaje::draw()
 {
+    float x=Personaje.pos[0];
+    float y=Personaje.pos[1];
+    float z=Personaje.pos[2];
+   
     static float s=0;
     
     // bouncing Snowman
