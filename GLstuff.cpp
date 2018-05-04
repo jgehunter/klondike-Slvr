@@ -20,10 +20,10 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     
    
             
-    case 'w': yp=yp+0.4;break;
-    case 's': yp=yp-0.4;break;
-    case 'd': xp=xp+0.4;break;
-    case 'a': xp=xp-0.4; break;
+    case 'w': yp=yp+0.5;break;
+    case 's': yp=yp-0.5;break;
+    case 'd': xp=xp+0.5;break;
+    case 'a': xp=xp-0.5; break;
     
         
     }		
@@ -79,7 +79,7 @@ void init_GL_stuff()
 
   
   // color del fondo
-  glClearColor(102.0/255.0, 194.0/255.0, 255.0/255.0, 0.5f); // RGB
+  glClearColor(0/255.0, 153/255.0, 0/255.0, 0.5f); // RGB
 
 	
   // Define el punto de vista

@@ -30,8 +30,17 @@ void Personaje::draw()
     
     
     glPushMatrix();
+    glTranslatef(x,y,0);
     
-    glTranslatef(x,y,z);  
+
+
+    glColor3f(128/255.0, 64/255.0, 0.0);
+    glutWireTorus(0.10,0.15,15,15);
+  glColor3f(1.0f, 1.0f, 0.0f);
+    
+    
+    
+    glTranslatef(0,0,z);
     glRotatef(90,1,0,0);
     glRotatef(personaje_rot,0,1,0);
     glRotatef(0,0,0,1);
@@ -56,7 +65,7 @@ void Personaje::draw()
     glPopMatrix();
     
     // Draw Nose
-    glColor3f(1.0f, 0.5f , 0.5f);
+    glColor3f(1.0f, 160.0/255.0 , 77.0/255.0);
     glRotatef(0.0f,1.0f, 0.0f, 0.0f);
     glutSolidCone(0.03f,0.15f,10,2);
     glPopMatrix();
