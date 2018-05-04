@@ -13,6 +13,8 @@
 #include <fstream>
 #include <iostream>
 #include "nodo.h"
+#include "Figura.h"
+#include "Personaje.h"
 
 
 
@@ -29,18 +31,16 @@ void OnDibuja(void);
 void OnKeyboardDown(unsigned char key, int x, int y);
 void OnSpecKeyboardDown(int key, int x, int y);
 
-// Ejemplo de objeto 3D
-void drawSnowMan(float x, float y, float z);
-  
 
 // Variables globales
 
-
-double xp=0;
-double yp=0;
-double zp=0;
+float xp=0;
+float yp=0;
+float zp=0;
 
 float cam_pos[3]={0,-10,10};
+
+Personaje snowman;
 
 
 // Texture datas tructure
@@ -48,7 +48,7 @@ GLuint KLtexture;
 GLuint Bgtexture;
 
 
-float snowman_rot = 0;
+
 
 
 
@@ -59,6 +59,7 @@ int main(int argc,char* argv[])
 /**************************************************************/
     //INICILIZACION PROGRAMA HUNTER
     
+
     
     
     
@@ -105,8 +106,8 @@ int main(int argc,char* argv[])
     //DEBERIA BASTAR CON LoadTexture(900,1074, "klondike.bmp" ); PERO NO FUNIONA SI NO PONES LA RURA COMPLETA, A„ADID LA VUESTRA PARA PRUEBAS
     
     
-    KLtexture= LoadTexture(900,1074, "/Users/inakiechevarria/Documents/Progra/klondike-Slvr/klondike.bmp" );
-  // KLtexture= LoadTexture(900,1074, "/   /klondike.bmp" );
+   // KLtexture= LoadTexture(900,1074, "/Users/inakiechevarria/Documents/Progra/klondike-Slvr/klondike.bmp" );
+   KLtexture= LoadTexture(900,1074, "/Users/josemi_1928/Desktop/GitHub/klondike-Slvr/klondike.bmp" );
   // KLtexture= LoadTexture(900,1074,  "/   /klondike.bmp");
     
     
@@ -171,9 +172,7 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     
     
     
-    
-    snowman_rot += 2.0;
-  if(snowman_rot>360) snowman_rot = 0;
+   
   
 }
 
@@ -190,11 +189,12 @@ void OnDibuja(void)
 
     displaytext(KLtexture);
   //background(Bgtexture);
+    snowman.mover(xp, yp, zp);
+    snowman.draw();
     
-  drawSnowMan(xp,yp,zp);
   
-  
-    
+    snowman.personaje_rot += 2.0;
+    if(snowman.personaje_rot>360) snowman.personaje_rot = 0;
  
    
     
@@ -221,7 +221,7 @@ void OnDibuja(void)
 
 
 
-void drawSnowMan(float x, float y, float z)
+/*void drawSnowMan(float x, float y, float z)
 {
 
   static float s=0;
@@ -268,5 +268,5 @@ void drawSnowMan(float x, float y, float z)
   glPopMatrix();
   
 }
-
+*/
 

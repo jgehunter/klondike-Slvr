@@ -5,8 +5,8 @@
 #include <errno.h>
 #include "GLstuff.h"
 
-extern double xp;
-extern double yp;
+extern float xp;
+extern float yp;
 extern float cam_pos[];
 
 

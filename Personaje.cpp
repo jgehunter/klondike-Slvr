@@ -3,6 +3,12 @@
 #include <string.h>
 #include "GLstuff.h"
 
+
+Personaje::Personaje(){
+    personaje_rot=0;
+    
+};
+
 void Personaje::draw()
 {
     float x=pos[0];
@@ -11,20 +17,23 @@ void Personaje::draw()
    
     static float s=0;
     
+    
     // bouncing Snowman
     s+=0.05;
     z = 0.3*sin(s);
     if (s>3.14) {s=0;}
     
     
+   
     
     glColor3f(1.0f, 1.0f, 1.0f);
+    
     
     glPushMatrix();
     
     glTranslatef(x,y,z);  
     glRotatef(90,1,0,0);
-    glRotatef(snowman_rot,0,1,0);
+    glRotatef(personaje_rot,0,1,0);
     glRotatef(0,0,0,1);
     
     

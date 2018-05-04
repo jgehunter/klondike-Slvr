@@ -41,7 +41,7 @@ void Figura::mover(float x,float y,float z)
     }
 void Figura::rotar(float a, float[])
 {
-    
+   
     
     
 }

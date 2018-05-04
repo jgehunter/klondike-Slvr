@@ -6,7 +6,7 @@
 
 
 class Figura{
- private:
+ protected:
 
 float pos[3];
 float rot[2];

@@ -5,17 +5,16 @@
 
 
 
-class Personaje :: public Figura {
+class Personaje: public Figura {
  private:
   
 
  protected:
   
-
  public:
     Personaje();
-  void draw();
-  
+    void draw();
+  float personaje_rot;
   
 };
 
