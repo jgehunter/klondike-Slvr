@@ -107,7 +107,7 @@ int main(int argc,char* argv[])
     
     
    // KLtexture= LoadTexture(900,1074, "/Users/inakiechevarria/Documents/Progra/klondike-Slvr/klondike.bmp" );
-   KLtexture= LoadTexture(900,1074, "klondike.bmp" );
+   KLtexture= LoadTexture(900,1074, "/Users/josemi_1928/Desktop/GitHub/klondike-Slvr/klondike.bmp" );
   // KLtexture= LoadTexture(900,1074,  "/   /klondike.bmp");
     
     

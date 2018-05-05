@@ -36,7 +36,7 @@ void Personaje::draw()
 
     glColor3f(128/255.0, 64/255.0, 0.0);
     glutWireTorus(0.10,0.15,15,15);
-  glColor3f(1.0f, 1.0f, 0.0f);
+    glColor3f(1.0f, 1.0f, 0.0f);
     
     
     
@@ -44,6 +44,17 @@ void Personaje::draw()
     glRotatef(90,1,0,0);
     glRotatef(personaje_rot,0,1,0);
     glRotatef(0,0,0,1);
+    
+    //Dibujar alitas
+    /*
+    glPushMatrix();
+    glTranslatef(0.3,0.0,0.0);
+    glTranslatef(-0.6,0.4,0.0);
+    glRotatef(60, 1, 1, 0);
+    glScalef(0.3, 0.3, 0.3);
+    glColor3f(0.5, 0.7, 0.2);
+    glutSolidTetrahedron();
+    glPopMatrix(); */
     
     
     // Draw Body
@@ -69,6 +80,9 @@ void Personaje::draw()
     glRotatef(0.0f,1.0f, 0.0f, 0.0f);
     glutSolidCone(0.03f,0.15f,10,2);
     glPopMatrix();
+    
+    
+
     
     
 }
