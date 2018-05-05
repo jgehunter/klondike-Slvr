@@ -20,10 +20,14 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     
    
             
-    case 'w': yp=yp+0.5;break;
-    case 's': yp=yp-0.5;break;
-    case 'd': xp=xp+0.5;break;
-    case 'a': xp=xp-0.5; break;
+    case 'w': yp=yp+0.4;
+            break;
+    case 's': yp=yp-0.4;
+            break;
+    case 'd': xp=xp+0.4;
+            break;
+    case 'a': xp=xp-0.4;
+            break;
     
         
     }		
