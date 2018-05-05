@@ -40,7 +40,7 @@ float zp=0;
 
 float cam_pos[3]={0,-10,10};
 
-Personaje snowman;
+Personaje pollito;
 
 
 // Texture datas tructure
@@ -189,12 +189,12 @@ void OnDibuja(void)
 
     displaytext(KLtexture);
   //background(Bgtexture);
-    snowman.mover(xp, yp, zp);
-    snowman.draw();
+    pollito.mover(xp, yp, zp);
+    pollito.draw();
     
   
-    snowman.personaje_rot += 2.0;
-    if(snowman.personaje_rot>360) snowman.personaje_rot = 0;
+    pollito.personaje_rot += 2.0;
+    if(pollito.personaje_rot>360) pollito.personaje_rot = 0;
  
    
     
@@ -205,7 +205,7 @@ void OnDibuja(void)
   gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],  // posicion del  ojo
 	    0.0, 0, 0.0,		        // hacia que punto mira  
 	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
-  
+
   //Al final, cambiar el buffer
   glutSwapBuffers();
   glutPostRedisplay();//se le indica que redibuje la pantalla
