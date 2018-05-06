@@ -18,7 +18,7 @@ void Personaje::draw()
     static float s=0;
     
     
-    // bouncing Snowman
+    // bouncing pollito
     s+=0.05;
     z = 0.3*sin(s);
     if (s>3.14) {s=0;}
@@ -45,16 +45,26 @@ void Personaje::draw()
     glRotatef(personaje_rot,0,1,0);
     glRotatef(0,0,0,1);
     
-    //Dibujar alitas
-    /*
+    //Dibujar alitas (dibujamos tetraedo q intersecte con la esfera del cuerpo y sobresalga dando lugar a las alas y la cola del pollo. Falta ajustar la escala y la rotacion)
+    
     glPushMatrix();
-    glTranslatef(0.3,0.0,0.0);
-    glTranslatef(-0.6,0.4,0.0);
-    glRotatef(60, 1, 1, 0);
-    glScalef(0.3, 0.3, 0.3);
-    glColor3f(0.5, 0.7, 0.2);
+    
+
+    glTranslatef(0.0f,0.0f, 0.0f);
+    glRotatef(60, 1, 0.5, 0.5);
+    glScalef(0.2, 0.2, 0.2);
+    glColor3f( 255/255.0, 153/255.0, 51/255.0);
     glutSolidTetrahedron();
-    glPopMatrix(); */
+    
+    glPopMatrix();
+   
+    
+    //Niebla para dar profundidad
+    /*
+    glFogi(GL_FOG_MODE, GL_EXP);
+    GLfloat colorniebla[4]={1,1,1,1};
+    glFogfv(GL_FOG_COLOR, colorniebla); */
+
     
     
     // Draw Body
