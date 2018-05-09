@@ -172,11 +172,13 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
      nodoActual = OPEN.front();
      OPEN.pop_front();
      nodoActual->Crearhijos( CLOSED, OPEN, nodoActual, tablero );
-     for( auto iter : nodoActual->Gethijos()){
+     
+    for( auto iter : nodoActual->Gethijos()){
      OPEN.push_back(iter);
      contador++;
      CLOSED.push_back(*iter);
      }
+       
         if( OPEN.empty() || nodoActual->Comprobarmovimiento( tablero ) == 0 ) break;
      
         std::cout << "x y actuales: " << nodoActual->Getcoordenadas().first << " " << nodoActual->Getcoordenadas().second << std::endl;
@@ -184,22 +186,12 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
          xp=nodoActual->Getcoordenadas().first;
          yp=nodoActual->Getcoordenadas().second;
          
-     }
-     
-    
+        }
     
     std::cout << "La posicion final es: " << nodoActual->Getcoordenadas().first << " " << nodoActual->Getcoordenadas().second << std::endl;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-     Nodo *nodoVisitado1 = nodoActual;
+   
+    Nodo *nodoVisitado1 = nodoActual;
      std::vector<Nodo> recorrido;
      
      while(nodoVisitado1->Getparent() != nullptr) {
@@ -222,7 +214,7 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
      flagLeaf = 0;
      } while(1) ;
      delete nodoInicio;
-     
+ /**************************************************************/
      
      
      
