@@ -51,8 +51,8 @@ Personaje pollito;
 std::map<std::pair<int,int>,int> tablero;
 std::ifstream ficheroTablero;
 
-int posX;
-int posY;
+int posX=0;
+int posY=0;
 int mov;
 
 
@@ -111,13 +111,11 @@ int main(int argc,char* argv[])
  
    
    KLtexture= LoadTexture(900,1074,  "klondike.bmp");  //NO FUNIONA SI NO PONES el .bmp donde se crea el .exe
-    
-    
-    
-    glBindTexture (GL_TEXTURE_2D, KLtexture);
+   glBindTexture (GL_TEXTURE_2D, KLtexture);
  
-  /*Bgtexture=LoadTexture(900,1074, "klondike.bmp" );
-  glBindTexture (GL_TEXTURE_2D, Bgtexture);*/
+  
+Bgtexture=LoadTexture(800,319, "montana.bmp" );
+  glBindTexture (GL_TEXTURE_2D, Bgtexture);
     
     
   // bucle del programa
@@ -271,7 +269,7 @@ void OnDibuja(void)
 
 
     displaytext(KLtexture);
-  //background(Bgtexture);
+    background(Bgtexture);
    
     
     pollito.mover(xp, yp, zp);

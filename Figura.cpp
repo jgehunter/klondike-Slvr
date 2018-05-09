@@ -19,18 +19,6 @@ Figura::Figura() {
 }
 
 
-/*void Figura::getNombre(char *n)
-{
-  strcpy(n,nombre);
-}
-
-
-void Figura::setNombre(char *n)
-{
-  strcpy(nombre,n);
-}
-
-*/
 void Figura::mover(float x,float y,float z)
 {
   

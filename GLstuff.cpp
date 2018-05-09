@@ -83,7 +83,7 @@ void init_GL_stuff()
 
   
   // color del fondo
-  glClearColor(0/255.0, 153/255.0, 0/255.0, 0.5f); // RGB
+  glClearColor(240/255.0, 240/255.0, 240/255.0, 0.5f); // RGB
 
 	
   // Define el punto de vista
@@ -173,21 +173,23 @@ glBindTexture(GL_TEXTURE_2D, Thetexture);
 
  //INTENTO DE PONER IMAGEN DE FONDO
 
-/*void background (GLuint texture) {
+void background (GLuint texture) {
     
-   glBindTexture( GL_TEXTURE_2D, texture );
+    glEnable(GL_TEXTURE_2D);
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
     
+    glBindTexture( GL_TEXTURE_2D, texture );
     
-   glBegin(GL_QUADS);
-      glTexCoord2f(0.0, 0.0); glVertex3f(-70.0, -5.0, 0.0);
-     glTexCoord2f(0.0, 1.0); glVertex3f(-5.0, 5.0, 0.0);
-     glTexCoord2f(1.0, 1.0); glVertex3f(5.0, 5.0, 0.0);
-   glTexCoord2f(1.0, 0.0); glVertex3f(5.0, -5.0, 0.0);
-        
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0); glVertex3f(-7.0, 5.0, 0.0);
+    glTexCoord2f(0.0, 1.0); glVertex3f(-7.0, 6, 3);
+    glTexCoord2f(1.0, 1.0); glVertex3f(7.0, 6, 3);
+    glTexCoord2f(1.0, 0.0); glVertex3f(7.0, 5.0, 0.0);
+    
    glEnd();
     glFlush();
     glDisable(GL_TEXTURE_2D);
-} */
+} 
 
  
 
