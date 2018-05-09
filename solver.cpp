@@ -13,9 +13,11 @@ int main()
     int posX;
     int posY;
     int mov;
+    
+    
     while(ficheroTablero >> posX >> posY >> mov){
         tablero[std::make_pair(posX,posY)] = mov;
-    }
+            }
 
     Nodo* nodoActual;
     Nodo* nodoPlaceholder;
