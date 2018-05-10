@@ -15,7 +15,7 @@
 #include "nodo.h"
 #include "Figura.h"
 #include "Personaje.h"
-
+#include <unistd.h>
 
 
 
@@ -170,6 +170,7 @@ int main(int argc,char* argv[])
 void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
 {
     /**************************************************************/
+    usleep(50000);
     
     
     // PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
@@ -289,7 +290,6 @@ void OnDibuja(void)
     /**************************************************************/
     
     // proyeccion de las figuras     DIBUJAR
-    
     
     displaytext(KLtexture);
     background(Bgtexture);

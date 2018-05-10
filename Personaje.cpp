@@ -19,7 +19,7 @@ void Personaje::draw()
     
     
     // bouncing pollito
-    s+=0.05;
+    s+=0.2;
     z = 0.3*sin(s);
     if (s>3.14) {s=0;}
     
