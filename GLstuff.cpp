@@ -20,13 +20,13 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     
    
             
-    case 'w': yp=yp+0.4;
+    case 'w': yp=yp+0.35;
             break;
-    case 's': yp=yp-0.4;
+    case 's': yp=yp-0.35;
             break;
-    case 'd': xp=xp+0.4;
+    case 'd': xp=xp+0.42;
             break;
-    case 'a': xp=xp-0.4;
+    case 'a': xp=xp-0.42;
             break;
     
         
@@ -181,10 +181,10 @@ void background (GLuint texture) {
     glBindTexture( GL_TEXTURE_2D, texture );
     
     glBegin(GL_QUADS);
-    glTexCoord2f(0.0, 0.0); glVertex3f(-7.0, 5.0, -2.0);
-    glTexCoord2f(0.0, 1.0); glVertex3f(-7.0, 6, 3);
-    glTexCoord2f(1.0, 1.0); glVertex3f(7.0, 6, 3);
-    glTexCoord2f(1.0, 0.0); glVertex3f(7.0, 5.0, -2.0);
+    glTexCoord2f(0.0, 0.0); glVertex3f(-8.0, 5.0, -3.0);
+    glTexCoord2f(0.0, 1.0); glVertex3f(-8.0, 6, 3);
+    glTexCoord2f(1.0, 1.0); glVertex3f(8.0, 6, 3);
+    glTexCoord2f(1.0, 0.0); glVertex3f(8.0, 5.0, -3.0);
     
    glEnd();
     glFlush();
