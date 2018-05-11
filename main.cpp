@@ -16,11 +16,13 @@
 #include "Figura.h"
 #include "Personaje.h"
 
-#ifdef LINUX
+#ifdef __linux__
 #include <unistd.h>
 #endif
-#ifdef WINDOWS
+#ifdef _WIN32
 #include <windows.h>
+#include <chrono>
+#include <thread>
 #endif
 
 
@@ -37,15 +39,7 @@ void OnDibuja(void);
 void OnKeyboardDown(unsigned char key, int x, int y);
 void OnSpecKeyboardDown(int key, int x, int y);
 
-void mySleep(int sleepMs)
-{
-#ifdef LINUX
-	usleep(sleepMs * 1000);   // usleep takes sleep time in us (1 millionth of a second)
-#endif
-#ifdef WINDOWS
-	Sleep(sleepMs);
-#endif
-}
+
 
 
 // Variables globales
@@ -186,7 +180,15 @@ int main(int argc,char* argv[])
 void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
 {
     /**************************************************************/
-    mySleep(50);
+
+#ifdef __linux__
+	usleeps(50000);
+#endif
+#ifdef _WIN32
+	std::this_thread::sleep_for(std::chrono::microseconds(50000));
+#endif
+	
+	
     
     
     // PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
