@@ -27,7 +27,7 @@ void myLogic();
 //Callback de dibujo
 void OnDibuja(void);
 
-//Callback de gestión del teclado
+//Callback de gesti—n del teclado
 void OnKeyboardDown(unsigned char key, int x, int y);
 void OnSpecKeyboardDown(int key, int x, int y);
 
@@ -238,47 +238,7 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     
     /**************************************************************/
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //ejemplo trasladar mu–eco
-    
-    //xp=xp+0.01;      PRUEBA A USAR teclas         w
-    // yp=yp+0.01;                                a s d
-    
-    
-    //Ejemplos de acciones
-    
-    //if(xp>5) xp = 0;
-    // if(yp>5) yp = 0;
-    
-    //if(yp>5) exit(1);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
 
 /**************************************************************/
