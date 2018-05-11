@@ -19,6 +19,10 @@
 #ifdef __linux__
 #include <unistd.h>
 #endif
+#ifdef __APPLE__
+#include <unistd.h>
+#endif
+
 #ifdef _WIN32
 #include <windows.h>
 #include <chrono>
@@ -182,8 +186,13 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     /**************************************************************/
 
 #ifdef __linux__
-	usleeps(50000);
+	usleep(50000);
 #endif
+    
+#ifdef __APPLE__
+    usleep(50000);
+#endif
+    
 #ifdef _WIN32
 	std::this_thread::sleep_for(std::chrono::microseconds(50000));
 #endif
