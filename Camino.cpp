@@ -16,10 +16,10 @@ void Camino::draw()
 {
 
     
-    float Xact=7;
-    float Yact=7;
-    float Xsig=-7;
-    float Ysig=-7;
+    float Xact=-7;
+    float Yact=-7;
+    float Xsig=7;
+    float Ysig=7;
     float L=0;
     float angulo=0;
   
@@ -27,7 +27,7 @@ void Camino::draw()
         std::cout << iterador.Getcoordenadas().first << iterador.Getcoordenadas().second << std::endl;
     }
     */
-   
+    
 
   
 
