@@ -26,17 +26,15 @@ void Personaje::draw()
     
     
 glPushMatrix();
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glTranslatef(x,y,0);
     
-
+    glTranslatef(x,y,0);
     //Nido
     
     glColor3f(128/255.0, 64/255.0, 0.0);
     glutWireTorus(0.10,0.15,15,15);
     glColor3f(1.0f, 1.0f, 0.0f);
     
-    
+   
     //Rotar y botar
     glTranslatef(0,0,z);
     glRotatef(90,1,0,0);
@@ -90,7 +88,7 @@ glPushMatrix();
     glRotatef(0.0f,1.0f, 0.0f, 0.0f);
     glutSolidCone(0.03f,0.15f,10,2);
    
-   
+
     //Alas
     
     glTranslatef(0.0f,-0.2f,-0.05f);
@@ -111,9 +109,5 @@ glPopMatrix();
     
     
     
-    
-
-    
-    
-}
+};
 
