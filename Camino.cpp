@@ -54,6 +54,8 @@ void Camino::draw()
     Xsig*=0.42;
     Ysig*=0.35;
     
+    L=sqrtf(Xsig*Xsig+Ysig*Ysig);
+   
     glPushMatrix();
    
     glTranslatef(0,-0.2,0);
@@ -62,8 +64,7 @@ void Camino::draw()
     glTranslatef(Xact,Yact,0);
     glRotatef(-angulo,0,0,1);
    
-    L=L*0.7;
-    
+    L=L*0.9;
     glScalef(0.5, 0.5, 1);
     glBegin(GL_POLYGON);
     
