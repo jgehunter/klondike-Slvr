@@ -97,10 +97,10 @@ glPushMatrix();
     
     glBegin(GL_POLYGON);
     glColor3f( 255/255.0, 153/255.0, 51/255.0);
-    glVertex3f(0.39,0.4,0.5);
-    glVertex3f(-0.39,0.4,0.5);
-    glVertex3f(-1,-0.1,-0.2);
-    glVertex3f(1,-0.1,-0.2);
+    glVertex3f(0.39,0.4,0.5*z);
+    glVertex3f(-0.39,0.4,0.5*z);
+    glVertex3f(-1,-0.1,-0.2*z);
+    glVertex3f(1,-0.1,-0.2*z);
     glEnd();
 
     
