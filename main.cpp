@@ -15,6 +15,7 @@
 #include "nodo.h"
 #include "Figura.h"
 #include "Personaje.h"
+#include "Camino.h"
 
 #ifdef __linux__
 #include <unistd.h>
@@ -55,7 +56,7 @@ float zp=0;
 float cam_pos[3]={0,-10,10};
 
 Personaje pollito;
-
+Camino camino;
 
 //INICILIZACION PROGRAMA HUNTER
 /**************************************************************/
@@ -284,7 +285,7 @@ void OnDibuja(void)
     
     pollito.mover(xp, yp, zp);
     pollito.draw();
-    
+    camino.draw();
     
     pollito.personaje_rot += 2.0;
     if(pollito.personaje_rot>360) pollito.personaje_rot = 0;
