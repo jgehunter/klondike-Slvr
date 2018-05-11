@@ -285,7 +285,9 @@ void OnDibuja(void)
     
     pollito.mover(xp, yp, zp);
     pollito.draw();
+    //camino.draw(recorrido);
     camino.draw();
+    
     
     pollito.personaje_rot += 2.0;
     if(pollito.personaje_rot>360) pollito.personaje_rot = 0;
