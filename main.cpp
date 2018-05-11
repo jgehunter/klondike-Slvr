@@ -287,7 +287,11 @@ void OnDibuja(void)
     pollito.draw();
     //camino.draw(recorrido);
     camino.draw();
-    
+    /*
+     for () recorriendo vector
+     
+     camino.draw() con Xsig Ysig var globales
+     */
     
     pollito.personaje_rot += 2.0;
     if(pollito.personaje_rot>360) pollito.personaje_rot = 0;

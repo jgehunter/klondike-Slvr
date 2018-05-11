@@ -16,22 +16,19 @@ void Camino::draw()
 {
 
     
-    float Xact=-7;
-    float Yact=-7;
-    float Xsig=7;
-    float Ysig=7;
+    float Xact=0;
+    float Yact=0;
+    float Xsig=0;
+    float Ysig=0;
     float L=0;
     float angulo=0;
-  
+
     /* for(auto iterador : recorrido){
         std::cout << iterador.Getcoordenadas().first << iterador.Getcoordenadas().second << std::endl;
     }
     */
     
-
-  
-
-    
+   
     Xsig=Xsig-Xact;
     Ysig=Ysig-Yact;
     
@@ -55,19 +52,14 @@ void Camino::draw()
     
     std::cout << L <<" "<<angulo << std::endl;
     
-  /*  //conversiones al mapa
-    Xact*=0.42;
-    Yact*=0.35;
-    Xsig*=0.42;
-    Ysig*=0.35; */
-  
+
     L*=0.95;
  
    std::cout << L << std::endl;
     glPushMatrix();
    
     glTranslatef(0,-0.2,0);
-    // glScalef(0.2, 0.2, 0.2);
+   
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     glTranslatef(Xact,Yact,0);
     glRotatef(-angulo,0,0,1);
@@ -101,67 +93,6 @@ void Camino::draw()
     glPopMatrix();
     
     
-    /*
-    
-    glTranslatef(0.1f+0.42*Xact,-0.3f+0.35*Yact,0);
-    L=sqrtf(Xsig*Xsig+Ysig*Ysig);
-    
-    angulo=acos(Xsig/L);
-    
-    if(Xsig<0) angulo=acos(Xsig/L);
-    
-    if(Ysig<0) angulo=asin(Ysig/L);
-   
-    angulo*=(180/PI);
-    
-    glRotatef(-angulo,0,0,1);
-
-std::cout << L <<" "<<angulo << std::endl;
-   
-   
-    
-    
-    glPushMatrix();
-    
-    glTranslatef(-0.1f,0,0);
-   // glScalef(0.2, 0.2, 0.2);
-    glColor3f( 255/255.0, 0/255.0, 0/255.0);
-   
-   
-      glScalef(0.5, 0.5, 1);
-    glBegin(GL_POLYGON);
-  
-    glColor3f( 255/255.0, 0/255.0, 0/255.0);
-    glVertex3f(0.2,0,0.1);
-    glVertex3f(0.5,2,0.1);
-    glVertex3f(0.2,4.2,0.1);
-    glVertex3f(-0.2,4.2,0.1);
-    glVertex3f(0.2,3,0.1);
-    glVertex3f(-0.2,0,0.1);
-   
-    glEnd();
-    
-    
-    
-    glTranslatef(0.0f,4,0);
-    glBegin(GL_TRIANGLES);
-    
-    glVertex3f(0.5f, 0, 0.1f);
-    glVertex3f( 0.0f,  0.5f, 0.1f);
-    glVertex3f(-0.5f, 0, 0.1f);
-    
-    glEnd();
-
-    
-    glPopMatrix();
-   
-  
-
-    
-    
-    
-    */
-
     
     
 }
