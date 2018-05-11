@@ -20,8 +20,8 @@ void Personaje::draw()
    
     // bouncing pollito
     s+=0.2;
-    //z = 0.3*sin(s);
-    osc = sin(2*s);
+    z = 0.3*sin(s);
+    osc = sin(3*s);
     if (s>3.14) {s=0;}
     
     
@@ -90,7 +90,7 @@ glPushMatrix();
     glutSolidCone(0.03f,0.15f,10,2);
    
    
-
+    //Alas
     
     glTranslatef(0.0f,-0.2f,-0.05f);
     glScalef(0.2, 0.2, 0.2);
@@ -100,8 +100,8 @@ glPushMatrix();
     glColor3f( 255/255.0, 153/255.0, 51/255.0);
     glVertex3f(0.39,0.4,0.5);
     glVertex3f(-0.39,0.4,0.5);
-    glVertex3f(-1,-0.1*osc,-0.2);
-    glVertex3f(1,-0.1*osc,-0.2);
+    glVertex3f(-1.2,-0.2*osc,-0.2);
+    glVertex3f(1.2,-0.2*osc,-0.2);
     glEnd();
 
     
