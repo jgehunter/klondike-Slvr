@@ -18,8 +18,8 @@ void Camino::draw()
     
     float Xact=0;
     float Yact=0;
-    float Xsig=0;
-    float Ysig=0;
+    float Xsig=4;
+    float Ysig=7;
     float L=0;
     float angulo=0;
 
