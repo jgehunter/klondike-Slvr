@@ -71,7 +71,7 @@ glPushMatrix();
     
     
     // Draw Head
-    glTranslatef(0.0f, 0.15f+0.08f, 0.0f);
+    glTranslatef(0.0f, 0.15f+0.04f, 0.0f);
     glutSolidSphere(0.08f,20,20);
     
     // Draw Eyes
@@ -99,8 +99,8 @@ glPushMatrix();
     glColor3f( 255/255.0, 153/255.0, 51/255.0);
     glVertex3f(0.39,0.4,0.5);
     glVertex3f(-0.39,0.4,0.5);
-    glVertex3f(-1.2,-0.2*osc,-0.2);
-    glVertex3f(1.2,-0.2*osc,-0.2);
+    glVertex3f(-1.1,-0.2*osc,-0.2);
+    glVertex3f(1.1,-0.2*osc,-0.2);
     glEnd();
     glPopMatrix();
    

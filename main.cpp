@@ -1,5 +1,5 @@
 //programa principal (contiene el bucle infinito que dibuja)
-
+#define _CRT_SECURE_NO_WARNINGS
 
 //#include "GLUT/glut.h"
 
@@ -15,7 +15,13 @@
 #include "nodo.h"
 #include "Figura.h"
 #include "Personaje.h"
+
+#ifdef LINUX
 #include <unistd.h>
+#endif
+#ifdef WINDOWS
+#include <windows.h>
+#endif
 
 
 
@@ -30,6 +36,16 @@ void OnDibuja(void);
 //Callback de gesti—n del teclado
 void OnKeyboardDown(unsigned char key, int x, int y);
 void OnSpecKeyboardDown(int key, int x, int y);
+
+void mySleep(int sleepMs)
+{
+#ifdef LINUX
+	usleep(sleepMs * 1000);   // usleep takes sleep time in us (1 millionth of a second)
+#endif
+#ifdef WINDOWS
+	Sleep(sleepMs);
+#endif
+}
 
 
 // Variables globales
@@ -170,7 +186,7 @@ int main(int argc,char* argv[])
 void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
 {
     /**************************************************************/
-    usleep(50000);
+    mySleep(50);
     
     
     // PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
