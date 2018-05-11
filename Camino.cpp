@@ -16,10 +16,10 @@ void Camino::draw()
 {
 
     
-    float Xact=1;
-    float Yact=1;
-    float Xsig=-3;
-    float Ysig=-3;
+    float Xact=7;
+    float Yact=7;
+    float Xsig=-7;
+    float Ysig=-7;
     float L=0;
     float angulo=0;
   
@@ -30,17 +30,24 @@ void Camino::draw()
    
 
   
-    
+
     
     Xsig=Xsig-Xact;
     Ysig=Ysig-Yact;
+    
+    //conversiones al mapa
+    Xact*=0.42;
+    Yact*=0.35;
+    Xsig*=0.42;
+    Ysig*=0.35;
    
     L=sqrtf(Xsig*Xsig+Ysig*Ysig);
+  
    
     if(Xsig>=0 && Ysig>=0){ angulo=acos(Ysig/L); angulo*=(180/PI);}
-    if(Xsig>0 && Ysig<0) {angulo=acos(Xsig/L);angulo*=(180/PI); angulo+=90;}
-    if(Xsig<0 && Ysig<0) {angulo=acos(-Ysig/L);angulo*=(180/PI); angulo+=180;}
-    if(Xsig<0 && Ysig>0) {angulo=acos(Xsig/L);angulo*=(180/PI); angulo+=270;}
+    if(Xsig>=0 && Ysig<=0) {angulo=acos(Xsig/L);angulo*=(180/PI); angulo+=90;}
+    if(Xsig<=0 && Ysig<=0) {angulo=acos(-Ysig/L);angulo*=(180/PI); angulo+=180;}
+    if(Xsig<=0 && Ysig>=0) {angulo=acos(Xsig/L);angulo*=(180/PI); angulo+=270;}
       
         
     
@@ -48,14 +55,15 @@ void Camino::draw()
     
     std::cout << L <<" "<<angulo << std::endl;
     
-    //conversiones al mapa
+  /*  //conversiones al mapa
     Xact*=0.42;
     Yact*=0.35;
     Xsig*=0.42;
-    Ysig*=0.35;
-    
-    L=sqrtf(Xsig*Xsig+Ysig*Ysig);
-   
+    Ysig*=0.35; */
+  
+    L*=0.95;
+ 
+   std::cout << L << std::endl;
     glPushMatrix();
    
     glTranslatef(0,-0.2,0);
@@ -64,23 +72,23 @@ void Camino::draw()
     glTranslatef(Xact,Yact,0);
     glRotatef(-angulo,0,0,1);
    
-    L=L*0.9;
+
     glScalef(0.5, 0.5, 1);
     glBegin(GL_POLYGON);
     
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     glVertex3f(0.2,0,0.1);
-    glVertex3f(0.5,L/2.0,0.1);
-    glVertex3f(0.2,L,0.1);
-    glVertex3f(-0.2,L,0.1);
-    glVertex3f(0.2,0.5+L/2.0,0.1);
+    glVertex3f(0.5,L,0.1);
+    glVertex3f(0.2,2*L,0.1);
+    glVertex3f(-0.2,2*L,0.1);
+    glVertex3f(0.2,0.5+L,0.1);
     glVertex3f(-0.2,0,0.1);
     
     glEnd();
     
  
     
-    glTranslatef(0.0f,L,0);
+    glTranslatef(0.0f,2*L,0);
     glBegin(GL_TRIANGLES);
     
     glVertex3f(0.5f, 0, 0.1f);
