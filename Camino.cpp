@@ -28,9 +28,9 @@ void Camino::draw()
     glVertex3f(0,0,0.1);
     glVertex3f(0.3,0,0.1);
     glVertex3f(0.5,2,0.1);
-   
+    glVertex3f(0.3,4.2,0.1);
     glVertex3f(0.6,2,0.1);
-    glVertex3f(0,8,0.1);
+    glVertex3f(0,4.2,0.1);
    
     
     glEnd();
