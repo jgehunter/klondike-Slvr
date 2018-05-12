@@ -164,8 +164,8 @@ int main(int argc,char* argv[])
     glBindTexture (GL_TEXTURE_2D, KLtexture);
     
     
-    Bgtexture=LoadTexture(800,500, "montana2.bmp" );
-    //Bgtexture=LoadTexture(800,319, "montana.bmp" );
+    Bgtexture=LoadTexture(800,500, "montana.bmp" );
+    
     
     glBindTexture (GL_TEXTURE_2D, Bgtexture);
     
