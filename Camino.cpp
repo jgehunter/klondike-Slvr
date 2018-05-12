@@ -69,12 +69,14 @@ void Camino::draw()
     glBegin(GL_POLYGON);
     
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
-    glVertex3f(0.2,0,0.1);
+    glVertex3f(0.2,0,0.05);
     glVertex3f(0.5,L,0.1);
-    glVertex3f(0.2,2*L,0.1);
-    glVertex3f(-0.2,2*L,0.1);
+    glVertex3f(0.2,2*L,0.15);
+    glVertex3f(-0.2,2*L,0.15);
     glVertex3f(0.2,0.5+L,0.1);
-    glVertex3f(-0.2,0,0.1);
+    glVertex3f(-0.2,0,0.05);
+    
+
     
     glEnd();
     
@@ -83,9 +85,9 @@ void Camino::draw()
     glTranslatef(0.0f,2*L,0);
     glBegin(GL_TRIANGLES);
     
-    glVertex3f(0.5f, 0, 0.1f);
-    glVertex3f( 0.0f,  0.5f, 0.1f);
-    glVertex3f(-0.5f, 0, 0.1f);
+    glVertex3f(0.5f, 0, 0.15f);
+    glVertex3f( 0.0f,  0.5f, 0.2f);
+    glVertex3f(-0.5f, 0, 0.15f);
     
     glEnd();
     
