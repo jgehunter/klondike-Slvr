@@ -83,7 +83,7 @@ void init_GL_stuff()
 
   
   // color del fondo
-  glClearColor(240/255.0, 240/255.0, 240/255.0, 0.5f); // RGB
+  glClearColor(201/255.0, 215/255.0, 218/255.0, 0.5f); // RGB
 
 	
   // Define el punto de vista
