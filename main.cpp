@@ -271,12 +271,14 @@ void OnDibuja(void)
         do{
             std::cout << "DATO "  << BORRAR << std::endl;
             std::cout << "x e y: " << rit->Getcoordenadas().first << " " << rit->Getcoordenadas().second << std::endl;
+            
             camino.siguientes(rit->Getcoordenadas().first, rit->Getcoordenadas().second);
             camino.draw();
             BORRAR++;
             rit++;
         } while(rit != recorrido.rend());
-       camino.siguientes(0,0);
+       
+         camino.siguientes(0,0);
      }
 
 

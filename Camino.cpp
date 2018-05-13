@@ -19,8 +19,11 @@ void Camino::siguientes(float x, float y){
     Xact=Xsig;
     Yact=Ysig;
     
+   
     Xsig=x;
     Ysig=y;
+
+std::cout << " Xsig = "  << Xsig << " Ysig = "  << Ysig << " Xact = "  << Xact<< " Yact = "  << Yact << std::endl;
 }
 
 
@@ -29,12 +32,17 @@ void Camino::draw()
 
 {
 
-/*
-    Xact=0;
-    Yact=0;
-    Xsig=0;
-    Ysig=10;
-    */
+   float Xactdraw;
+   float Yactdraw;
+   float  Xsigdraw;
+   float  Ysigdraw;
+    
+
+ Xactdraw=Xact;
+ Yactdraw=Yact;
+ Xsigdraw=Xsig;
+ Ysigdraw=Ysig;
+  
     
     float L=0;
     float angulo=0;
@@ -42,22 +50,22 @@ void Camino::draw()
    
     
    
-    Xsig=Xsig-Xact;
-    Ysig=Ysig-Yact;
+    Xsigdraw=Xsigdraw-Xactdraw;
+    Ysigdraw=Ysigdraw-Yactdraw;
     
     //conversiones al mapa
-    Xact*=0.42;
-    Yact*=0.35;
-    Xsig*=0.42;
-    Ysig*=0.35;
+    Xactdraw*=0.42;
+    Yactdraw*=0.35;
+    Xsigdraw*=0.42;
+    Ysigdraw*=0.35;
    
-    L=sqrtf(Xsig*Xsig+Ysig*Ysig);
+    L=sqrtf(Xsigdraw*Xsigdraw+Ysigdraw*Ysigdraw);
   
    //Obtencion del ángulo
-    if(Xsig>=0 && Ysig>=0) {angulo=acos(Ysig/L); angulo*=(180/PI);}
-    if(Xsig>=0 && Ysig<=0) {angulo=acos(Xsig/L); angulo*=(180/PI); angulo+=90;}
-    if(Xsig<=0 && Ysig<=0) {angulo=acos(-Ysig/L);angulo*=(180/PI); angulo+=180;}
-    if(Xsig<=0 && Ysig>=0) {angulo=acos(Xsig/L); angulo*=(180/PI); angulo+=270;}
+    if(Xsigdraw>=0 && Ysigdraw>=0) {angulo=acos(Ysigdraw/L); angulo*=(180/PI);}
+    if(Xsigdraw>=0 && Ysigdraw<=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=90;}
+    if(Xsigdraw<=0 && Ysigdraw<=0) {angulo=acos(-Ysigdraw/L);angulo*=(180/PI); angulo+=180;}
+    if(Xsigdraw<=0 && Ysigdraw>=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=270;}
       
         
     
@@ -73,7 +81,7 @@ void Camino::draw()
     glTranslatef(0,0.1,0);
    
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
-    glTranslatef(Xact,Yact,0);
+    glTranslatef(Xactdraw,Yactdraw,0);
     glRotatef(-angulo,0,0,1);
    
 
