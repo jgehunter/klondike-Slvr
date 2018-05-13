@@ -30,10 +30,10 @@ void Camino::draw()
 {
 
     
-    Xact=0;
+   /* Xact=0;
     Yact=0;
     Xsig=0;
-    Ysig=10;
+    Ysig=10; */
     
     
     float L=0;
