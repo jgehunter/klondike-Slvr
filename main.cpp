@@ -286,10 +286,10 @@ void OnDibuja(void)
     pollito.mover(xp, yp, zp);
     pollito.draw();
    
-   // camino.draw();
+  //  camino.draw();
    
     
-    
+ 
      
      if(flagEnd){
      
@@ -300,7 +300,7 @@ void OnDibuja(void)
         }
      
      
-    
+ 
     
     
     pollito.personaje_rot += 2.0;

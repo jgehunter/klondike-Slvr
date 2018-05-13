@@ -26,14 +26,14 @@ void Camino::siguientes(float x, float y){
 
 
 void Camino::draw()
-//void Camino::drawsolution(std::vector<Nodo> recorrido)
+
 {
 
     
-   /* float Xact=0;
-    float Yact=0;
-    float Xsig=4;
-    float Ysig=7;*/
+    Xact=0;
+    Yact=0;
+    Xsig=0;
+    Ysig=10;
     
     
     float L=0;
@@ -70,7 +70,7 @@ void Camino::draw()
   
     glPushMatrix();
    
-    glTranslatef(0,-0.2,0);
+    glTranslatef(0,-0.15,0);
    
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     glTranslatef(Xact,Yact,0);
@@ -78,28 +78,33 @@ void Camino::draw()
    
 
     glScalef(0.5, 0.5, 1);
+   
     glBegin(GL_POLYGON);
-    
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
+    
+    glVertex3f(-0.1,0,0.05);
     glVertex3f(0.2,0,0.05);
-    glVertex3f(0.5,L,0.1);
-    glVertex3f(0.2,2*L,0.15);
-    glVertex3f(-0.2,2*L,0.15);
-    glVertex3f(0.2,0.5+L,0.1);
-    glVertex3f(-0.2,0,0.05);
-    
-
-    
+    glVertex3f(0.6,L,0.15);
+    glVertex3f(0.4,L,0.15);
     glEnd();
     
+   
+    glBegin(GL_POLYGON);
+    glColor3f( 255/255.0, 0/255.0, 0/255.0);
+    
+    glVertex3f(0.4,L,0.15);
+    glVertex3f(0.6,L,0.15);
+    glVertex3f(0.1,2*L,0.1);
+    glVertex3f(-0.1,2*L,0.1);
+    glEnd();
  
     
     glTranslatef(0.0f,2*L,0);
     glBegin(GL_TRIANGLES);
     
-    glVertex3f(0.5f, 0, 0.15f);
-    glVertex3f( 0.0f,  0.5f, 0.2f);
-    glVertex3f(-0.5f, 0, 0.15f);
+    glVertex3f(0.4f, 0, 0.1f);
+    glVertex3f( 0.0f,  0.4f, 0.05f);
+    glVertex3f(-0.4f, 0, 0.1f);
     
     glEnd();
     
