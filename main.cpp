@@ -260,7 +260,7 @@ void OnDibuja(void)
 
     pollito.mover(xp, yp, zp);
     pollito.draw();
-
+    camino.draw();
 
 
 
