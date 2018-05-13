@@ -64,36 +64,10 @@ void Camino::draw()
     L=sqrtf(Xsigdraw*Xsigdraw+Ysigdraw*Ysigdraw);
   
    //Obtencion del ángulo
-    if(Xsigdraw>=0 && Ysigdraw>=0){
-        angulo=acos(Ysigdraw/L);
-        angulo*=(180/PI);
-        Xactdraw=0.42*(Xactdraw+1);
-        Yactdraw=0.35*(Yactdraw+1);
-        }
-  
-    if(Xsigdraw>=0 && Ysigdraw<=0){
-        angulo=acos(Xsigdraw/L);
-        angulo*=(180/PI);
-        angulo+=90;
-        Xactdraw=0.42*(Xactdraw+1);
-        Yactdraw=0.35*(Yactdraw+1);
-        }
-  
-    if(Xsigdraw<=0 && Ysigdraw<=0){
-        angulo=acos(-Ysigdraw/L);
-        angulo*=(180/PI);
-        angulo+=180;
-        Xactdraw=0.42*(Xactdraw+1);
-        Yactdraw=0.35*(Yactdraw+1);
-        }
-    
-    if(Xsigdraw<=0 && Ysigdraw>=0){
-        angulo=acos(Xsigdraw/L);
-        angulo*=(180/PI);
-        angulo+=270;
-        Xactdraw=0.42*(Xactdraw+1);
-        Yactdraw=0.35*(Yactdraw+1);
-        }
+    if(Xsigdraw>=0 && Ysigdraw>=0) {angulo=acos(Ysigdraw/L); angulo*=(180/PI); }
+    if(Xsigdraw>=0 && Ysigdraw<=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=90;}
+    if(Xsigdraw<=0 && Ysigdraw<=0) {angulo=acos(-Ysigdraw/L);angulo*=(180/PI); angulo+=180;}
+    if(Xsigdraw<=0 && Ysigdraw>=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=270;}
       
         
     Xactdraw=0.42*(Xactdraw+1); Yactdraw=0.35*(Yactdraw+1);
