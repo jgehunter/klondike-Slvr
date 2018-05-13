@@ -232,10 +232,17 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     if(flagExit && flagPath && !flagEnd){
         int paso;
         paso = 0;
-        for(auto iter: recorrido){
-            std::cout << "El paso " << paso << " es " << iter.Getcoordenadas().first << " " << iter.Getcoordenadas().second << std::endl;
+       
+        std::cout << "Solucion" << std::endl;
+        
+        std::vector<Nodo>::reverse_iterator rit = recorrido.rbegin();
+        do{
+            std::cout << "El paso " << paso << " es " << rit->Getcoordenadas().first << " " << rit->Getcoordenadas().second << std::endl;
             paso++;
-        }
+            rit++;
+        } while(rit != recorrido.rend());
+    
+        
         flagEnd = 1;
     }
 
