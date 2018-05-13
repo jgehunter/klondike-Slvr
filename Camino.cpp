@@ -37,16 +37,18 @@ void Camino::draw()
    float  Xsigdraw;
    float  Ysigdraw;
     
-    Xactdraw=-3;
+    /*
+     Xactdraw=-3;
     Yactdraw=-3;
     Xsigdraw=-7;
     Ysigdraw=-7;
-/*
+     */
+ 
  Xactdraw=Xact;
  Yactdraw=Yact;
  Xsigdraw=Xsig;
  Ysigdraw=Ysig;
-  */
+ 
     
     float L=0;
     float angulo=0;
@@ -61,6 +63,7 @@ void Camino::draw()
     Xsigdraw*=0.42;
     Ysigdraw*=0.35;
    
+    
     L=sqrtf(Xsigdraw*Xsigdraw+Ysigdraw*Ysigdraw);
   
    //Obtencion del ángulo
@@ -70,21 +73,33 @@ void Camino::draw()
     if(Xsigdraw<=0 && Ysigdraw>=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=270;}
       
         
-    Xactdraw=0.42*(Xactdraw+1); Yactdraw=0.35*(Yactdraw+1);
+   
+    Xactdraw*=0.42;
+    Yactdraw*=0.35;
+   /*
+    if(Yactdraw>0) { Yactdraw=0.35*(Yactdraw+1); }
+    if(Yactdraw<0) { Yactdraw=0.35*(Yactdraw-1); }
+    */
+  
+    
+    
+    
     
     
     //Dibujo flecha
 
-    L*=0.8;
+    L*=0.78;
  
     std::cout<< L << std::endl;
     glPushMatrix();
    
-    glTranslatef(0,0.1,0);
+    
+    glTranslatef(Xactdraw,Yactdraw,0);
+   
    
    
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
-    glTranslatef(Xactdraw,Yactdraw,0);
+    glTranslatef(0,-0.2,0);
     glRotatef(-angulo,0,0,1);
    
 
