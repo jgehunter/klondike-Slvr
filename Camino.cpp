@@ -37,18 +37,24 @@ void Camino::draw()
    float  Xsigdraw;
    float  Ysigdraw;
     
-    /*
-     Xactdraw=-3;
+   //Para pruebas
+    
+    
+    Xactdraw=-3;
     Yactdraw=-3;
     Xsigdraw=-7;
     Ysigdraw=-7;
-     */
- 
- Xactdraw=Xact;
+   
+
+/*
+    
+    Xactdraw=Xact;
  Yactdraw=Yact;
  Xsigdraw=Xsig;
  Ysigdraw=Ysig;
  
+    */
+    
     
     float L=0;
     float angulo=0;
@@ -56,13 +62,15 @@ void Camino::draw()
    
     
    
-    Xsigdraw=Xsigdraw-Xactdraw;
-    Ysigdraw=Ysigdraw-Yactdraw;
+    
+    if(Xactdraw==0 && Yactdraw==0) {Xsigdraw=Xsigdraw-Xactdraw-1; Ysigdraw=Ysigdraw-Yactdraw-1; }
+    else { Xsigdraw=Xsigdraw-Xactdraw; Ysigdraw=Ysigdraw-Yactdraw;}
     
     //conversiones al mapa
     Xsigdraw*=0.42;
     Ysigdraw*=0.35;
-   
+    Xactdraw*=0.42;
+    Yactdraw*=0.35;
     
     L=sqrtf(Xsigdraw*Xsigdraw+Ysigdraw*Ysigdraw);
   
@@ -74,21 +82,12 @@ void Camino::draw()
       
         
    
-    Xactdraw*=0.42;
-    Yactdraw*=0.35;
-   /*
-    if(Yactdraw>0) { Yactdraw=0.35*(Yactdraw+1); }
-    if(Yactdraw<0) { Yactdraw=0.35*(Yactdraw-1); }
-    */
-  
-    
-    
     
     
     
     //Dibujo flecha
 
-    L*=0.78;
+    L*=0.85;
  
     std::cout<< L << std::endl;
     glPushMatrix();
