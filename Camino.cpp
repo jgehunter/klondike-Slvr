@@ -50,12 +50,11 @@ void Camino::draw()
     
     
     
-    std::cout << L <<" "<<angulo << std::endl;
     
 
     L*=0.95;
  
-   std::cout << L << std::endl;
+  
     glPushMatrix();
    
     glTranslatef(0,-0.2,0);
