@@ -69,7 +69,7 @@ void init_GL_stuff()
     
   glutInitWindowSize(ANCHO,ALTO);
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-  glutCreateWindow("Klondike");
+  glutCreateWindow("Back from the Klondike");
 
   //Habilitar las luces, la renderizacion y el color de los materiales
   glEnable(GL_LIGHT0);
