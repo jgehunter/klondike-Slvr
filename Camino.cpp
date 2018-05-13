@@ -40,20 +40,19 @@ void Camino::draw()
    //Para pruebas
     
     
-    Xactdraw=0;
-    Yactdraw=0;
-    Xsigdraw=-3;
-    Ysigdraw=-3;
-   
+   /* Xactdraw=-1;
+    Yactdraw=-1;
+    Xsigdraw=5;
+    Ysigdraw=5;
+   */
 
-/*
     
     Xactdraw=Xact;
- Yactdraw=Yact;
- Xsigdraw=Xsig;
- Ysigdraw=Ysig;
+    Yactdraw=Yact;
+    Xsigdraw=Xsig;
+    Ysigdraw=Ysig;
  
-    */
+    
     
     
     float L=0;
@@ -119,16 +118,16 @@ void Camino::draw()
     
     glVertex3f(-0.1,0,0.01);
     glVertex3f(0.2,0,0.01);
-    glVertex3f(0.16*L,L,0.15);
-    glVertex3f(0.16*L-0.2,L,0.15);
+    glVertex3f(0.18*L,L,0.15);
+    glVertex3f(0.18*L-0.2,L,0.15);
     glEnd();
     
    
     glBegin(GL_POLYGON);
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     
-    glVertex3f(0.16*L-0.2,L,0.15);
-    glVertex3f(0.16*L,L,0.15);
+    glVertex3f(0.18*L-0.2,L,0.15);
+    glVertex3f(0.18*L,L,0.15);
     glVertex3f(0.1,2*L,0.1);
     glVertex3f(-0.1,2*L,0.1);
     glEnd();
