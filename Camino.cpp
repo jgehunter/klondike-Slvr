@@ -29,12 +29,12 @@ void Camino::draw()
 
 {
 
-    
-   /* Xact=0;
+/*
+    Xact=0;
     Yact=0;
     Xsig=0;
-    Ysig=10; */
-    
+    Ysig=10;
+    */
     
     float L=0;
     float angulo=0;
@@ -67,10 +67,10 @@ void Camino::draw()
 
     L*=0.95;
  
-  
+    std::cout<< L << std::endl;
     glPushMatrix();
    
-    glTranslatef(0,-0.15,0);
+    glTranslatef(0,0.1,0);
    
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     glTranslatef(Xact,Yact,0);
@@ -84,16 +84,16 @@ void Camino::draw()
     
     glVertex3f(-0.1,0,0.05);
     glVertex3f(0.2,0,0.05);
-    glVertex3f(0.6,L,0.15);
-    glVertex3f(0.4,L,0.15);
+    glVertex3f(0.16*L,L,0.15);
+    glVertex3f(0.06*L,L,0.15);
     glEnd();
     
    
     glBegin(GL_POLYGON);
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     
-    glVertex3f(0.4,L,0.15);
-    glVertex3f(0.6,L,0.15);
+    glVertex3f(0.06*L,L,0.15);
+    glVertex3f(0.16*L,L,0.15);
     glVertex3f(0.1,2*L,0.1);
     glVertex3f(-0.1,2*L,0.1);
     glEnd();
