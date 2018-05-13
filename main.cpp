@@ -261,7 +261,6 @@ void OnDibuja(void)
     pollito.mover(xp, yp, zp);
     pollito.draw();
 
-   camino.draw();
 
 
 
@@ -277,7 +276,8 @@ void OnDibuja(void)
             BORRAR++;
             rit++;
         } while(rit != recorrido.rend());
-        }
+       camino.siguientes(0,0);
+     }
 
 
 
