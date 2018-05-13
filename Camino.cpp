@@ -12,7 +12,7 @@ Camino::Camino(){
     
 };
 void Camino::draw()
-//void Camino::draw(std::vector<Nodo> recorrido)
+//void Camino::drawsolution(std::vector<Nodo> recorrido)
 {
 
     

@@ -15,7 +15,7 @@ class Camino: public Figura {
   
  public:
     Camino();
-    //void draw(std::vector<Nodo>);
+    //void drawsolution(std::vector<Nodo>);
     void draw();
   
 };

@@ -19,6 +19,7 @@ float rot[2];
     void mover(float, float ,float);
     void rotar (float,float[3]);
     virtual void draw()=0;
+
 };
 
 #endif
