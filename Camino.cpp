@@ -37,12 +37,16 @@ void Camino::draw()
    float  Xsigdraw;
    float  Ysigdraw;
     
-
+    Xactdraw=-3;
+    Yactdraw=-3;
+    Xsigdraw=-7;
+    Ysigdraw=-7;
+/*
  Xactdraw=Xact;
  Yactdraw=Yact;
  Xsigdraw=Xsig;
  Ysigdraw=Ysig;
-  
+  */
     
     float L=0;
     float angulo=0;
@@ -54,31 +58,56 @@ void Camino::draw()
     Ysigdraw=Ysigdraw-Yactdraw;
     
     //conversiones al mapa
-    Xactdraw*=0.42;
-    Yactdraw*=0.35;
     Xsigdraw*=0.42;
     Ysigdraw*=0.35;
    
     L=sqrtf(Xsigdraw*Xsigdraw+Ysigdraw*Ysigdraw);
   
    //Obtencion del ángulo
-    if(Xsigdraw>=0 && Ysigdraw>=0) {angulo=acos(Ysigdraw/L); angulo*=(180/PI);}
-    if(Xsigdraw>=0 && Ysigdraw<=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=90;}
-    if(Xsigdraw<=0 && Ysigdraw<=0) {angulo=acos(-Ysigdraw/L);angulo*=(180/PI); angulo+=180;}
-    if(Xsigdraw<=0 && Ysigdraw>=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=270;}
+    if(Xsigdraw>=0 && Ysigdraw>=0){
+        angulo=acos(Ysigdraw/L);
+        angulo*=(180/PI);
+        Xactdraw=0.42*(Xactdraw+1);
+        Yactdraw=0.35*(Yactdraw+1);
+        }
+  
+    if(Xsigdraw>=0 && Ysigdraw<=0){
+        angulo=acos(Xsigdraw/L);
+        angulo*=(180/PI);
+        angulo+=90;
+        Xactdraw=0.42*(Xactdraw+1);
+        Yactdraw=0.35*(Yactdraw+1);
+        }
+  
+    if(Xsigdraw<=0 && Ysigdraw<=0){
+        angulo=acos(-Ysigdraw/L);
+        angulo*=(180/PI);
+        angulo+=180;
+        Xactdraw=0.42*(Xactdraw+1);
+        Yactdraw=0.35*(Yactdraw+1);
+        }
+    
+    if(Xsigdraw<=0 && Ysigdraw>=0){
+        angulo=acos(Xsigdraw/L);
+        angulo*=(180/PI);
+        angulo+=270;
+        Xactdraw=0.42*(Xactdraw+1);
+        Yactdraw=0.35*(Yactdraw+1);
+        }
       
         
-    
+    Xactdraw=0.42*(Xactdraw+1); Yactdraw=0.35*(Yactdraw+1);
     
     
     //Dibujo flecha
 
-    //L*=0.95;
+    L*=0.8;
  
     std::cout<< L << std::endl;
     glPushMatrix();
    
     glTranslatef(0,0.1,0);
+   
    
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     glTranslatef(Xactdraw,Yactdraw,0);
