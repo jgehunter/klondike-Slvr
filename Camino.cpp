@@ -23,7 +23,7 @@ void Camino::siguientes(float x, float y){
     Xsig=x;
     Ysig=y;
 
-std::cout << " Xsig = "  << Xsig << " Ysig = "  << Ysig << " Xact = "  << Xact<< " Yact = "  << Yact << std::endl;
+//std::cout << " Xsig = "  << Xsig << " Ysig = "  << Ysig << " Xact = "  << Xact<< " Yact = "  << Yact << std::endl;
 }
 
 
@@ -51,15 +51,11 @@ void Camino::draw()
     Yactdraw=Yact;
     Xsigdraw=Xsig;
     Ysigdraw=Ysig;
- 
-    
-    
+
     
     float L=0;
     float angulo=0;
-
-   
-    
+ 
     if(Xactdraw!=0 && Yactdraw!=0) {
         
         if(Xsigdraw-Xactdraw>=0) Xsigdraw=Xsigdraw-Xactdraw+1;
@@ -67,13 +63,8 @@ void Camino::draw()
         
         if(Ysigdraw-Yactdraw>=0) Ysigdraw=Ysigdraw-Yactdraw+1;
             else Ysigdraw=Ysigdraw-Yactdraw-1;
-        
-           
-           
-    }
-    else {
-   
-        Xsigdraw=Xsigdraw-Xactdraw; Ysigdraw=Ysigdraw-Yactdraw;}
+        }
+    else { Xsigdraw=Xsigdraw-Xactdraw; Ysigdraw=Ysigdraw-Yactdraw;}
     
     //conversiones al mapa
     Xsigdraw*=0.42;
@@ -98,19 +89,16 @@ void Camino::draw()
 
     L*=0.8;
  
-    std::cout<< L << std::endl;
+    //std::cout<< L << std::endl;
     glPushMatrix();
    
     
     glTranslatef(Xactdraw,Yactdraw,0);
-   
-   
-   
+  
     glColor3f( 255/255.0, 0/255.0, 0/255.0);
     glTranslatef(0,-0.2,0);
     glRotatef(-angulo,0,0,1);
    
-
     glScalef(0.5, 0.5, 1);
    
     glBegin(GL_POLYGON);

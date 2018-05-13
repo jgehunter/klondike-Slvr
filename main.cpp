@@ -197,7 +197,7 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
 {
     /**************************************************************/
 
-    //mySleep(50);
+    mySleep(50);
 
     // PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
 
@@ -267,14 +267,14 @@ void OnDibuja(void)
 
      if(flagEnd){
         std::vector<Nodo>::reverse_iterator rit = recorrido.rbegin();
-        int BORRAR = 0;
+       // int BORRAR = 0;
         do{
-            std::cout << "DATO "  << BORRAR << std::endl;
-            std::cout << "x e y: " << rit->Getcoordenadas().first << " " << rit->Getcoordenadas().second << std::endl;
+            //std::cout << "DATO "  << BORRAR << std::endl;
+           // std::cout << "x e y: " << rit->Getcoordenadas().first << " " << rit->Getcoordenadas().second << std::endl;
             
             camino.siguientes(rit->Getcoordenadas().first, rit->Getcoordenadas().second);
             camino.draw();
-            BORRAR++;
+         //   BORRAR++;
             rit++;
         } while(rit != recorrido.rend());
        
