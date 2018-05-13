@@ -286,18 +286,22 @@ void OnDibuja(void)
     pollito.mover(xp, yp, zp);
     pollito.draw();
     //camino.drawsolution(recorrido);
-    camino.draw();
+   // camino.draw();
    
     
-    /*
+    
      
      if(flagEnd){
-    
      
-     camino.draw()
+         for(auto iterador : recorrido){
+          camino.siguientes(iterador.Getcoordenadas().first, iterador.Getcoordenadas().second);
+          camino.draw();
+         }
+        }
+     
      
     
-     } */
+    
     
     pollito.personaje_rot += 2.0;
     if(pollito.personaje_rot>360) pollito.personaje_rot = 0;

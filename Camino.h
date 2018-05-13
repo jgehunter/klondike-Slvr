@@ -9,7 +9,10 @@
 
 class Camino: public Figura {
  private:
-  
+    float Xact;
+    float Yact;
+    float Xsig;
+    float Ysig;
 
  protected:
   
@@ -17,7 +20,7 @@ class Camino: public Figura {
     Camino();
     //void drawsolution(std::vector<Nodo>);
     void draw();
-  
+    void siguientes(float, float);
 };
 
 #endif

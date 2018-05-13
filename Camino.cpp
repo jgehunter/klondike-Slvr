@@ -8,25 +8,38 @@
 #define PI 3.1415926535897932384626433832795
 
 Camino::Camino(){
-  
+    Xact=0;
+    Yact=0;
+    Xsig=0;
+    Ysig=0;
     
 };
+
+void Camino::siguientes(float x, float y){
+    Xact=Xsig;
+    Yact=Ysig;
+    
+    Xsig=x;
+    Ysig=y;
+}
+
+
+
 void Camino::draw()
 //void Camino::drawsolution(std::vector<Nodo> recorrido)
 {
 
     
-    float Xact=0;
+   /* float Xact=0;
     float Yact=0;
     float Xsig=4;
-    float Ysig=7;
+    float Ysig=7;*/
+    
+    
     float L=0;
     float angulo=0;
 
-    /* for(auto iterador : recorrido){
-        std::cout << iterador.Getcoordenadas().first << iterador.Getcoordenadas().second << std::endl;
-    }
-    */
+   
     
    
     Xsig=Xsig-Xact;
@@ -40,7 +53,7 @@ void Camino::draw()
    
     L=sqrtf(Xsig*Xsig+Ysig*Ysig);
   
-   
+   //Obtencion del ángulo
     if(Xsig>=0 && Ysig>=0){ angulo=acos(Ysig/L); angulo*=(180/PI);}
     if(Xsig>=0 && Ysig<=0) {angulo=acos(Xsig/L);angulo*=(180/PI); angulo+=90;}
     if(Xsig<=0 && Ysig<=0) {angulo=acos(-Ysig/L);angulo*=(180/PI); angulo+=180;}
@@ -50,7 +63,7 @@ void Camino::draw()
     
     
     
-    
+    //Dibujo flecha
 
     L*=0.95;
  
