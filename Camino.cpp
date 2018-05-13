@@ -54,10 +54,10 @@ void Camino::draw()
     L=sqrtf(Xsig*Xsig+Ysig*Ysig);
   
    //Obtencion del ángulo
-    if(Xsig>=0 && Ysig>=0){ angulo=acos(Ysig/L); angulo*=(180/PI);}
-    if(Xsig>=0 && Ysig<=0) {angulo=acos(Xsig/L);angulo*=(180/PI); angulo+=90;}
+    if(Xsig>=0 && Ysig>=0) {angulo=acos(Ysig/L); angulo*=(180/PI);}
+    if(Xsig>=0 && Ysig<=0) {angulo=acos(Xsig/L); angulo*=(180/PI); angulo+=90;}
     if(Xsig<=0 && Ysig<=0) {angulo=acos(-Ysig/L);angulo*=(180/PI); angulo+=180;}
-    if(Xsig<=0 && Ysig>=0) {angulo=acos(Xsig/L);angulo*=(180/PI); angulo+=270;}
+    if(Xsig<=0 && Ysig>=0) {angulo=acos(Xsig/L); angulo*=(180/PI); angulo+=270;}
       
         
     
