@@ -1,6 +1,7 @@
 #include "Figura.h"
 #include "nodo.h"
 #include <vector>
+#include <tuple>
 
 #ifndef CAMINO_H
 #define CAMINO_H
@@ -14,13 +15,19 @@ class Camino: public Figura {
     float Xsig;
     float Ysig;
 
+    std::vector<std::tuple<float,float,float>> opcionesColores;
+
+    std::tuple<float,float,float> colorElegido;
+
+
  protected:
-  
+
  public:
     Camino();
     //void drawsolution(std::vector<Nodo>);
     void draw();
     void siguientes(float, float);
+    void elegirColor();
 };
 
 #endif
