@@ -16,15 +16,12 @@ class Camino: public Figura {
     float Ysig;
 
     std::vector<std::tuple<float,float,float>> opcionesColores;
-
     std::tuple<float,float,float> colorElegido;
-
 
  protected:
 
  public:
     Camino();
-    //void drawsolution(std::vector<Nodo>);
     void draw();
     void siguientes(float, float);
     void elegirColor();

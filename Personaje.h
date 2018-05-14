@@ -4,17 +4,15 @@
 #define PERSONAJE_H
 
 
-
 class Personaje: public Figura {
  private:
-  
 
  protected:
   
  public:
     Personaje();
     void draw();
-  float personaje_rot;
+    float personaje_rot;
   
 };
 

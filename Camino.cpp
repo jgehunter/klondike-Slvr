@@ -91,17 +91,11 @@ void Camino::draw()
 
     L*=0.78;
 
-    //std::cout<< L << std::endl;
     glPushMatrix();
-
-
+    
     glTranslatef(Xactdraw,Yactdraw,0);
-
-
-
-
-
     glColor3f(std::get<0>(colorElegido), std::get<1>(colorElegido), std::get<2>(colorElegido));
+   
     glTranslatef(0,-0.2,0);
     glRotatef(-angulo,0,0,1);
 
