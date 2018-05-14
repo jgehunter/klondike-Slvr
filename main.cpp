@@ -36,10 +36,10 @@
 void mySleep(int sleepMs)
 {
 #ifdef __linux__
-    usleep(sleepMs * 1000);   // usleep takes sleep time in us (1 millionth of a second)
+    usleep(sleepMs * 1500);   // usleep takes sleep time in us (1 millionth of a second)
 #endif
 #ifdef __APPLE__
-    usleep(sleepMs * 1000);   // usleep takes sleep time in us (1 millionth of a second)
+    usleep(sleepMs * 1500);   // usleep takes sleep time in us (1 millionth of a second)
 #endif // __APPLE__
 #ifdef _WIN32
     Sleep(sleepMs);
