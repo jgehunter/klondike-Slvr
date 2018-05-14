@@ -46,6 +46,13 @@ void mySleep(int sleepMs)
 #endif
 }
 
+
+// Lista para dibujar
+
+std::vector<Figura*> world;
+std::vector<Camino> world2;
+int contador;
+
 //Callbacks de logica del programa
 void myLogic();
 
@@ -70,6 +77,7 @@ float cam_pos[3]={0,-10,10};
 Personaje pollito;
 Camino camino;
 
+
 //INICILIZACION PROGRAMA HUNTER
 /**************************************************************/
 
@@ -90,11 +98,12 @@ Nodo* nodoInicio;
 std::list<Nodo*> OPEN;
 std::list<Nodo> CLOSED;
 
-int contador;
+int contadorFlechas;
 int flagExit;
 int flagPath;
 int flagClear;
 int flagEnd;
+int flagEnded;
 
 Nodo *nodoVisitado1;
 
@@ -143,6 +152,10 @@ int main(int argc,char* argv[])
     flagPath = 0;
     flagExit = 0;
     flagEnd = 0;
+    flagEnded = 0;
+
+    world.push_back(&pollito);
+    contadorFlechas = 0;
 
 
     // Inicializaciones OPEN GL
@@ -232,22 +245,34 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     if(flagExit && flagPath && !flagEnd){
         int paso;
         paso = 0;
-       
+
         std::cout << "Solucion" << std::endl;
-        
+
         std::vector<Nodo>::reverse_iterator rit = recorrido.rbegin();
         do{
             std::cout << "El paso " << paso << " es " << rit->Getcoordenadas().first << " " << rit->Getcoordenadas().second << std::endl;
             paso++;
             rit++;
         } while(rit != recorrido.rend());
-    
-        
+
+
         flagEnd = 1;
     }
 
     /**************************************************************/
 
+    if(flagEnd && !flagEnded){
+        std::vector<Nodo>::reverse_iterator rit = recorrido.rbegin();
+        do{
+            camino.siguientes(rit->Getcoordenadas().first, rit->Getcoordenadas().second);
+            camino.elegirColor();
+            world2.push_back(camino);
+            rit++;
+        } while(rit != recorrido.rend());
+
+         camino.siguientes(0,0);
+         flagEnded = 1;
+     }
 
 }
 
@@ -264,31 +289,15 @@ void OnDibuja(void)
     displaytext(KLtexture);
     background(Bgtexture);
 
-
     pollito.mover(xp, yp, zp);
-    pollito.draw();
-    
 
+    for(auto iter : world){
+        (*iter).draw();
+    }
 
-
-
-     if(flagEnd){
-        std::vector<Nodo>::reverse_iterator rit = recorrido.rbegin();
-       // int BORRAR = 0;
-        do{
-            //std::cout << "DATO "  << BORRAR << std::endl;
-           // std::cout << "x e y: " << rit->Getcoordenadas().first << " " << rit->Getcoordenadas().second << std::endl;
-            
-            camino.siguientes(rit->Getcoordenadas().first, rit->Getcoordenadas().second);
-            camino.draw();
-         //   BORRAR++;
-            rit++;
-        } while(rit != recorrido.rend());
-       
-         camino.siguientes(0,0);
-     }
-
-
+     for(auto iter : world2){
+        iter.draw();
+    }
 
 
 
