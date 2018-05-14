@@ -89,7 +89,7 @@ void Camino::draw()
 
     //Dibujo flecha
 
-    L*=0.8;
+    L*=0.78;
 
     //std::cout<< L << std::endl;
     glPushMatrix();
