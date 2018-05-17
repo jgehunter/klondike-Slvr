@@ -212,13 +212,13 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
 
     mySleep(50);
   // limitar movimiento de la camara
-   if (cam_pos[0]>20) cam_pos[0]=20;
+   if (cam_pos[0]>4) cam_pos[0]=4;
     if (cam_pos[1]>0) cam_pos[1]=0;
     if (cam_pos[2]>15) cam_pos[2]=15;
     
-    if (cam_pos[0]<-20) cam_pos[0]=-20;
+    if (cam_pos[0]<-4) cam_pos[0]=-4;
     if (cam_pos[1]<-10) cam_pos[1]=-10;
-    if (cam_pos[2]<2) cam_pos[2]=2; 
+    if (cam_pos[2]<2) cam_pos[2]=2;
     std::cout<< cam_pos[0] << std::endl;
     std::cout<< cam_pos[1] << std::endl;
     std::cout<< cam_pos[2] << std::endl << std::endl;
