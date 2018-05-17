@@ -211,9 +211,18 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     /**************************************************************/
 
     mySleep(50);
-
-    // PROGRAMA DE HUNTER QUE DA LAS Xp Yp Zp , Y LAS FUNCIONES QUE TRASLADAN EL MU„ECO (esto es un bucle ya de por si)
-
+  // limitar movimiento de la camara
+   if (cam_pos[0]>20) cam_pos[0]=20;
+    if (cam_pos[1]>0) cam_pos[1]=0;
+    if (cam_pos[2]>15) cam_pos[2]=15;
+    
+    if (cam_pos[0]<-20) cam_pos[0]=-20;
+    if (cam_pos[1]<-10) cam_pos[1]=-10;
+    if (cam_pos[2]<2) cam_pos[2]=2; 
+    std::cout<< cam_pos[0] << std::endl;
+    std::cout<< cam_pos[1] << std::endl;
+    std::cout<< cam_pos[2] << std::endl << std::endl;
+    
     if(!flagExit){
         nodoActual = OPEN.front();
         OPEN.pop_front();
