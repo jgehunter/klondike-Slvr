@@ -219,9 +219,8 @@ void myLogic()  // CONTIENE LAS ACTUALIZACIONES DEL PROGRAMA
     if (cam_pos[0]<-4) cam_pos[0]=-4;
     if (cam_pos[1]<-10) cam_pos[1]=-10;
     if (cam_pos[2]<2) cam_pos[2]=2;
-    std::cout<< cam_pos[0] << std::endl;
-    std::cout<< cam_pos[1] << std::endl;
-    std::cout<< cam_pos[2] << std::endl << std::endl;
+   
+    
     
     if(!flagExit){
         nodoActual = OPEN.front();
