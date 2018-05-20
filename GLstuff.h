@@ -1,6 +1,10 @@
 //cabeceras de funciones para interfaz grafica
  
 
+/*
+ como instalar libreria OpenGL en cada SO
+ http://web.eecs.umich.edu/~sugih/courses/eecs487/glut-howto/
+ */
 
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
