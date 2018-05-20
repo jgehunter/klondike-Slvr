@@ -1,4 +1,3 @@
-CC = gcc
 CFLAGS = -g -Wall -Wno-deprecated
 OS = $(shell uname)
 ifeq ($(OS), Darwin)
@@ -14,4 +13,4 @@ else
 endif
 
 all:
-	$(CC) main.cpp GLstuff.cpp Personaje.cpp Figura.cpp Camino.cpp $(CFLAGS) -o $@ $< $(LIBS)
+	gcc main.cpp GLstuff.cpp Personaje.cpp Figura.cpp Camino.cpp $(CFLAGS) -o $@ $< $(LIBS)
