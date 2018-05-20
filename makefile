@@ -12,5 +12,5 @@ else
 #	LIBS = -lglut -lGLU -lGL
 endif
 
-all:
+Klondike:
 	gcc main.cpp GLstuff.cpp Personaje.cpp Figura.cpp Camino.cpp $(CFLAGS) -o $@ $< $(LIBS)
