@@ -6,15 +6,20 @@
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #include <GLUT/glut.h>
-#else
+#endif
+
 #ifdef _WIN32
 #include <windows.h>
-#endif
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
 #endif
 
+#ifdef __linux__
+#  include <GL/gl.h>
+#  include <GL/glu.h>
+#  include <GL/glext.h>
+#endif
 
 
 #include <stdio.h>
