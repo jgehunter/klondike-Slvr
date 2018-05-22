@@ -1,3 +1,11 @@
+/**********************************************************************;
+* Nombre del fichero        : Camino.cpp
+*
+* Autores                   : Jorge Hunter, Inaki Echevarria, Jose Miguel Hervas
+*
+* Finalidad                 : Clase que representa una flecha entre dos puntos
+*
+**********************************************************************/
 
 #include "Camino.h"
 #include <string.h>
@@ -9,14 +17,16 @@
 #include <algorithm>
 #define PI 3.1415926535897932384626433832795
 
-Camino::Camino(){
+Camino::Camino()
+{
     Xact=0;
     Yact=0;
     Xsig=0;
     Ysig=0;
-};
+}
 
-void Camino::siguientes(float x, float y){
+void Camino::siguientes( float x, float y )
+{
 
     Xact = Xsig;
     Yact = Ysig;
@@ -25,29 +35,16 @@ void Camino::siguientes(float x, float y){
     Xsig=x;
     Ysig=y;
 
-
-//std::cout << " Xsig = "  << Xsig << " Ysig = "  << Ysig << " Xact = "  << Xact<< " Yact = "  << Yact << std::endl;
 }
 
 
 void Camino::draw()
-
 {
 
-   float Xactdraw;
-   float Yactdraw;
-   float  Xsigdraw;
-   float  Ysigdraw;
-
-   //Para pruebas
-
-
-   /* Xactdraw=-1;
-    Yactdraw=-1;
-    Xsigdraw=5;
-    Ysigdraw=5;
-   */
-
+    float Xactdraw;
+    float Yactdraw;
+    float  Xsigdraw;
+    float  Ysigdraw;
 
     Xactdraw=Xact;
     Yactdraw=Yact;
@@ -55,47 +52,39 @@ void Camino::draw()
     Ysigdraw=Ysig;
 
 
-    float L=0;
-    float angulo=0;
+    float L = 0;
+    float angulo = 0;
 
-    if(Xactdraw!=0 && Yactdraw!=0) {
+    if( Xactdraw!=0 && Yactdraw!=0 ) {
 
-        if(Xsigdraw-Xactdraw>=0) Xsigdraw=Xsigdraw-Xactdraw+1;
-            else Xsigdraw=Xsigdraw-Xactdraw-1;
+        if( Xsigdraw-Xactdraw >= 0 ) Xsigdraw = Xsigdraw-Xactdraw+1;
+            else Xsigdraw = Xsigdraw-Xactdraw-1;
 
-        if(Ysigdraw-Yactdraw>=0) Ysigdraw=Ysigdraw-Yactdraw+1;
-            else Ysigdraw=Ysigdraw-Yactdraw-1;
+        if( Ysigdraw-Yactdraw >= 0 ) Ysigdraw = Ysigdraw-Yactdraw+1;
+            else Ysigdraw = Ysigdraw-Yactdraw-1;
         }
-    else { Xsigdraw=Xsigdraw-Xactdraw; Ysigdraw=Ysigdraw-Yactdraw;}
+    else { Xsigdraw = Xsigdraw-Xactdraw; Ysigdraw = Ysigdraw-Yactdraw;}
 
-    //conversiones al mapa
     Xsigdraw*=0.42;
     Ysigdraw*=0.35;
     Xactdraw*=0.42;
     Yactdraw*=0.35;
 
-    L=sqrtf(Xsigdraw*Xsigdraw+Ysigdraw*Ysigdraw);
+    L=sqrtf( Xsigdraw*Xsigdraw+Ysigdraw*Ysigdraw );
 
-   //Obtencion del ángulo
     if(Xsigdraw>=0 && Ysigdraw>=0) {angulo=acos(Ysigdraw/L); angulo*=(180/PI); }
     if(Xsigdraw>=0 && Ysigdraw<=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=90;}
     if(Xsigdraw<=0 && Ysigdraw<=0) {angulo=acos(-Ysigdraw/L);angulo*=(180/PI); angulo+=180;}
     if(Xsigdraw<=0 && Ysigdraw>=0) {angulo=acos(Xsigdraw/L); angulo*=(180/PI); angulo+=270;}
 
 
-
-
-
-
-    //Dibujo flecha
-
     L*=0.78;
 
     glPushMatrix();
-    
+
     glTranslatef(Xactdraw,Yactdraw,0);
     glColor3f(std::get<0>(colorElegido), std::get<1>(colorElegido), std::get<2>(colorElegido));
-   
+
     glTranslatef(0,-0.2,0);
     glRotatef(-angulo,0,0,1);
 
@@ -132,9 +121,6 @@ void Camino::draw()
 
 
     glPopMatrix();
-
-
-
 
 }
 

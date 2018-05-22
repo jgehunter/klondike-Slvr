@@ -1,3 +1,11 @@
+/**********************************************************************;
+* Nombre del fichero        : Figura.cpp
+*
+* Autores                   : Jorge Hunter, Inaki Echevarria, Jose Miguel Hervas
+*
+* Finalidad                 : Clase que representa una figura geometriica cualquiera
+*
+**********************************************************************/
 
 #include "Figura.h"
 #include <string.h>
@@ -5,12 +13,8 @@
 
 using namespace std;
 
-
-
-
-//INICIALIZAR
-
-Figura::Figura() {
+Figura::Figura()
+{
 
     pos[0]=0;
     pos[1]=0;
@@ -21,20 +25,16 @@ Figura::Figura() {
 
 void Figura::mover(float x,float y,float z)
 {
-  
+
     pos[0]=x;
     pos[1]=y;
     pos[2]=z;
 
     }
-void Figura::rotar(float a, float[])
-{
-   
-    
-    
-}
 
-    
 
-  
+
+
+
+
 
