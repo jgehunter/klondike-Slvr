@@ -1,3 +1,12 @@
+/**********************************************************************;
+* Nombre del fichero        : nodo.h
+*
+* Autores                   : Jorge Hunter, Inaki Echevarria, Jose Miguel Hervas
+*
+* Finalidad                 : Clase que representa el nodo de un arbol
+*
+**********************************************************************/
+
 #ifndef NODO_H
 #define NODO_H
 
@@ -9,18 +18,24 @@
 class Nodo
 {
     public:
+
         Nodo();
         Nodo( std::pair<int,int> );
+
         virtual ~Nodo();
 
         std::pair<int,int> Getcoordenadas() { return coordenadas; }
         void Setcoordenadas(std::pair<int,int> val) { coordenadas = val; }
+
         Nodo* Getparent() { return parent; }
         void Setparent(Nodo* val) { parent = val; }
+
         std::vector<Nodo*>& Gethijos() { return hijos; }
         void Sethijos(Nodo* val) { hijos.push_back(val); }
+
         void Crearhijos( const std::list<Nodo> &val, const std::list<Nodo*> &abiertos, Nodo *nodoPadre, const std::map<std::pair<int,int>,int> &tablero  );
         int Comprobarmovimiento( const std::map<std::pair<int,int>,int> &val );
+
         bool operator==( Nodo &val );
 
     protected:
@@ -29,6 +44,7 @@ class Nodo
         std::pair<int,int> coordenadas;
         Nodo* parent;
         std::vector<Nodo*> hijos;
+
 };
 
 #endif // NODO_H

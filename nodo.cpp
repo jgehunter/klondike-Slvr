@@ -1,12 +1,22 @@
+/**********************************************************************;
+* Nombre del fichero        : nodo.cpp
+*
+* Autores                   : Jorge Hunter, Inaki Echevarria, Jose Miguel Hervas
+*
+* Finalidad                 : Clase que representa el nodo de un arbol
+*
+**********************************************************************/
+
 #include <utility>
 #include "nodo.h"
 
 Nodo::Nodo()
-{}
+{
+}
 
 Nodo::Nodo( std::pair<int,int> val )
 {
-    Setcoordenadas(val);
+    Setcoordenadas( val );
 }
 
 Nodo::~Nodo()
@@ -28,9 +38,6 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoNorte = new Nodo;
             nuevoNodoNorte->Setcoordenadas( nodoTemporal.Getcoordenadas() );
@@ -51,9 +58,6 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoNoreste = new Nodo;
             nuevoNodoNoreste->Setcoordenadas( nodoTemporal.Getcoordenadas() );
@@ -74,9 +78,7 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
+
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoEste = new Nodo;
             nuevoNodoEste->Setcoordenadas( nodoTemporal.Getcoordenadas() );
@@ -97,9 +99,6 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoSudeste = new Nodo;
             nuevoNodoSudeste->Setcoordenadas( nodoTemporal.Getcoordenadas() );
@@ -120,9 +119,6 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoSur = new Nodo;
             nuevoNodoSur->Setcoordenadas( nodoTemporal.Getcoordenadas() );
@@ -143,9 +139,6 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoSuroeste = new Nodo;
             nuevoNodoSuroeste->Setcoordenadas( nodoTemporal.Getcoordenadas() );
@@ -166,9 +159,6 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoOeste = new Nodo;
             nuevoNodoOeste->Setcoordenadas( nodoTemporal.Getcoordenadas() );
@@ -189,18 +179,12 @@ void Nodo::Crearhijos( const std::list<Nodo> &cerrados, const std::list<Nodo*> &
         for(auto it : cerrados) {
             if( it == nodoTemporal ) flagAlreadyVisited = 1;
         }
-        /*for(auto it : abiertos) {
-            if(*it == nodoTemporal) flagAlreadyVisited = 1;
-        }*/
         if(!flagMoveInvalid && !flagAlreadyVisited){
             Nodo *nuevoNodoNoroeste = new Nodo;
             nuevoNodoNoroeste->Setcoordenadas( nodoTemporal.Getcoordenadas() );
             nuevoNodoNoroeste->Setparent( nodoPadre );
             this->Sethijos(nuevoNodoNoroeste);
         }
-
-
-
 
 }
 
