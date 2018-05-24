@@ -151,7 +151,7 @@ int main( int argc, char* argv[] )
 
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-    KLtexture= LoadTexture(900,1074,  "klondike.bmp");  //NO FUNIONA SI NO PONES el .bmp donde se crea el .exe
+    KLtexture= LoadTexture(900,1074, "klondike.bmp");  //NO FUNIONA SI NO PONES el .bmp donde se crea el .exe
     glBindTexture (GL_TEXTURE_2D, KLtexture);
 
     Bgtexture=LoadTexture(800,500, "montana.bmp" );
