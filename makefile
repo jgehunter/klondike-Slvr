@@ -1,8 +1,9 @@
+CC = gcc
 CFLAGS = -g -Wall -Wno-deprecated
 OS = $(shell uname)
 ifeq ($(OS), Darwin)
-	LIBS = -framework OpenGL -framework GLUT -framework Cocoa 
-else ifeq ($(OS), Linux)
+	LIBS = -framework OpenGL -framework GLUT -framework Cocoa -std=c++11 -lstdc++
+else ifeq ($(OS), Linux) 
 	LIBS = -lglut -lGLU -lGL
 else
 #	CC=i686-pc-mingw32-g++
@@ -13,4 +14,4 @@ else
 endif
 
 Klondike:
-	gcc main.cpp GLstuff.cpp Personaje.cpp Figura.cpp Camino.cpp $(CFLAGS) -o $@ $< $(LIBS)
+	$(CC) main.cpp GLstuff.cpp Personaje.cpp Figura.cpp Camino.cpp $(CFLAGS) -o $@ $< $(LIBS)
