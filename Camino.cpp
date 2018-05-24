@@ -15,6 +15,7 @@
 #include <iostream>
 #include <random>
 #include <algorithm>
+#include <tuple>
 #define PI 3.1415926535897932384626433832795
 
 Camino::Camino()
