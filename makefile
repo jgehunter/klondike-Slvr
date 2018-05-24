@@ -1,9 +1,9 @@
 CC = g++
 CFLAGS = -g -Wall -Wno-deprecated
-LDFLAGS= -L/usr/local/lib 
+LDFLAGS= 
 OS = $(shell uname)
 ifeq ($(OS), Darwin)
-	LIBS = -framework OpenGL -framework GLUT -std=c++11 -lstdc++ $(LDFLAGS)
+	LIBS = -framework OpenGL -framework GLUT -L/usr/local/lib
 else ifeq ($(OS), Linux) 
 	LIBS = -lglut -lGLU -lGL
 else
@@ -15,4 +15,4 @@ else
 endif
 
 Klondike:
-	$(CC) main.cpp GLstuff.cpp Personaje.cpp Figura.cpp Camino.cpp nodo.cpp $(CFLAGS)  -o test  $(LIBS)
+	$(CC) main.cpp GLstuff.cpp Personaje.cpp Figura.cpp Camino.cpp nodo.cpp -std=c++11 $(CFLAGS)   $(LIBS) -o Klondikeapp 
