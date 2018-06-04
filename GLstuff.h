@@ -1,5 +1,5 @@
 //cabeceras de funciones para interfaz grafica
- 
+
 
 /*
  como instalar libreria OpenGL en cada SO
@@ -16,7 +16,7 @@
 #include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include <GL/glut.h>
+#include "glut.h"
 #endif
 
 #ifdef __linux__
@@ -29,7 +29,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
- 
+
 #define  ANCHO 800
 #define ALTO 800
 
@@ -43,4 +43,4 @@ void displaytext(GLuint Thetexture);
 void background (GLuint texture);
 
 void init_GL_stuff();
- 
+
